@@ -63,5 +63,7 @@ Iruka uses [Sparkle](https://sparkle-project.org) for automatic updates — once
 
 ## About
 
-Iruka is developed and maintained by **Dorien Herremans**.  
+Iruka is developed and maintained by **Dorien Herremans**.
+
+> **Note:** The "Source code" archives attached to each release by GitHub contain only this releases repository (README and update feed) — not the Iruka application source code.
 
