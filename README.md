@@ -64,5 +64,4 @@ Iruka uses [Sparkle](https://sparkle-project.org) for automatic updates — once
 ## About
 
 Iruka is developed and maintained by **Dorien Herremans**.  
-Questions or feedback: [dorien.herremans@gmail.com](mailto:dorien.herremans@gmail.com)
 
