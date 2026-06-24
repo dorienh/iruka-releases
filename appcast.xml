@@ -15,7 +15,7 @@
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v0.1.0/Iruka-0.1.0.dmg"
-        sparkle:edSignature="sparkle:edSignature="d9HccfAio3vKv2aGXbNq5uw4dKsGP/RKEkeWwe60DXJg/rLRP1NyK4Bi9Y1dB6bsRw2Q1IUjrucbXTMZDo01Bg==" length="8569030""
+        sparkle:edSignature="d9HccfAio3vKv2aGXbNq5uw4dKsGP/RKEkeWwe60DXJg/rLRP1NyK4Bi9Y1dB6bsRw2Q1IUjrucbXTMZDo01Bg=="
         length="8569030"
         type="application/octet-stream"/>
     </item>
