@@ -7,5 +7,18 @@
     <link>https://raw.githubusercontent.com/dorienh/iruka-releases/main/appcast.xml</link>
     <description>Iruka release notes</description>
     <language>en</language>
+    <item>
+      <title>Iruka 0.1.0</title>
+      <pubDate>Wed, 24 Jun 2026 17:13:30 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v0.1.0/Iruka-0.1.0.dmg"
+        sparkle:edSignature="sparkle:edSignature="d9HccfAio3vKv2aGXbNq5uw4dKsGP/RKEkeWwe60DXJg/rLRP1NyK4Bi9Y1dB6bsRw2Q1IUjrucbXTMZDo01Bg==" length="8569030""
+        length="8569030"
+        type="application/octet-stream"/>
+    </item>
+
   </channel>
 </rss>
