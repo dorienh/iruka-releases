@@ -47,7 +47,7 @@ Live preview of images, PDFs, text files, and media without opening a separate a
 
 | | |
 |---|---|
-| **macOS** | Ventura 13.0 or later |
+| **macOS** | Sonoma 14.0 or later |
 | **Architecture** | Apple Silicon and Intel |
 | **Disk space** | < 15 MB |
 
