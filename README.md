@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="[https://iruka.dorienherremans.com/icons/iruka256.png]" width="128" alt="Iruka icon"/>
+<img src="https://iruka.dorienherremans.com/icons/iruka256.png" width="128" alt="Iruka icon"/>
 
 # Iruka
 
