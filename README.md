@@ -9,7 +9,7 @@
 Iruka is a fast, native file manager inspired by KDE's Dolphin — with a synced terminal, split-pane Markdown preview, and grep-powered search. The cleaner, faster alternative to Path Finder and ForkLift.
 
 [![macOS 13+](https://img.shields.io/badge/macOS-13%2B-black?logo=apple&logoColor=white)](https://github.com/dorienh/iruka-releases/releases)
-[![More info](https://img.shields.io/badge/macOS-13%2B-black?logo=apple&logoColor=white)](https://iruka.dorienherremans.com)
+[![More info](https://img.shields.io/badge/more-info%2B-black?logoColor=purple)](https://iruka.dorienherremans.com)
 [![Latest release](https://img.shields.io/github/v/release/dorienh/iruka-releases?label=download&color=blue)](https://github.com/dorienh/iruka-releases/releases/latest)
 
 </div>
