@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/dorienh/iruka/main/Iruka/Assets.xcassets/AppIcon.appiconset/iruka256.png" width="128" alt="Iruka icon"/>
+<img src="[https://raw.githubusercontent.com/dorienh/iruka/main/Iruka/Assets.xcassets/AppIcon.appiconset/iruka256.png]" width="128" alt="Iruka icon"/>
 
 # Iruka
 
-**A fast, keyboard-driven file manager for macOS**
+**The modern macOS file explorer you've been waiting for**
 
-Iruka brings the power and feel of KDE Dolphin to the Mac — dual-pane browsing, integrated terminal, tabbed navigation, and deep Finder integration, all built natively in SwiftUI.
+Iruka is a fast, native file manager inspired by KDE's Dolphin — with a synced terminal, split-pane Markdown preview, and grep-powered search. The cleaner, faster alternative to Path Finder and ForkLift.
 
 [![macOS 13+](https://img.shields.io/badge/macOS-13%2B-black?logo=apple&logoColor=white)](https://github.com/dorienh/iruka-releases/releases)
 [![Latest release](https://img.shields.io/github/v/release/dorienh/iruka-releases?label=download&color=blue)](https://github.com/dorienh/iruka-releases/releases/latest)
@@ -64,6 +64,4 @@ Iruka uses [Sparkle](https://sparkle-project.org) for automatic updates — once
 ## About
 
 Iruka is developed and maintained by **Dorien Herremans**.
-
-> **Note:** The "Source code" archives attached to each release by GitHub contain only this releases repository (README and update feed) — not the Iruka application source code.
 
