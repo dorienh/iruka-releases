@@ -12,7 +12,7 @@
       <pubDate>Wed, 24 Jun 2026 17:13:30 +0000</pubDate>
       <sparkle:version>1</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v0.1.0/Iruka-0.1.0.dmg"
         sparkle:edSignature="d9HccfAio3vKv2aGXbNq5uw4dKsGP/RKEkeWwe60DXJg/rLRP1NyK4Bi9Y1dB6bsRw2Q1IUjrucbXTMZDo01Bg=="
