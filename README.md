@@ -4,9 +4,9 @@
 
 # Iruka
 
-**The file manager for developers who live in the terminal**
+**The modern macOS file explorer you've been waiting for**
 
-Iruka puts a full, synced shell right below your files — so `git status`, `npm install`, and a quick `grep` live in the same window as your directory browser. Built natively in SwiftUI, keyboard-first, no Electron.
+Iruka is a fast, native macOS file manager inspired by KDE's Dolphin — with a terminal that follows your folder, one-click git & SSH shortcuts, beautiful Markdown and code previews, and grep-powered search. The cleaner, faster alternative to Path Finder and ForkLift.
 
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-black?logo=apple&logoColor=white)](https://iruka.dorienherremans.com)
 [![Latest release](https://img.shields.io/github/v/release/dorienh/iruka-releases?label=download&color=blue)](https://github.com/dorienh/iruka-releases/releases/latest)
@@ -25,7 +25,7 @@ Every tab has a persistent shell that follows your navigation. The **Sync** butt
 ### Three view modes
 - **List view** — sortable columns (Name, Modified, Size, Kind), resizable widths, rubber-band multi-select. Folders show `›` disclosure triangles that expand inline with 16 pt-per-level indentation.
 - **Icon grid** — adaptive grid of file icons at 80–100 pt.
-- **Column view** (⌘2) — Finder-style 3-pane browser; each folder click opens a new column; preview pane shows the selected file.
+- **Column view** (⌘3) — Finder-style 3-pane browser; each folder click opens a new column; preview pane shows the selected file.
 
 ### Tabbed navigation
 Open multiple folders in independent tabs, each with its own navigation history, selection, and terminal session. Switch instantly; each tab remembers exactly where you were.
@@ -36,7 +36,7 @@ Click-drag in the blank space to draw a selection rectangle. Hold ⌘ to add to 
 ### Rich preview pane
 - **CSV / TSV** — rendered as a proper grid with a bold header row, alternating shading, monospaced cells, and scrolling in both axes
 - **Markdown** — headings, code blocks, blockquotes, lists, inline styling, and GFM pipe tables (bordered, with alternating rows)
-- **Code** — monospaced view for 60+ languages and text formats; JSON is auto pretty-printed
+- **Code** — syntax-highlighted monospaced view for 60+ languages and text formats; JSON is auto pretty-printed
 - **Everything else** — Quick Look for images, PDFs, videos, and any format macOS understands
 
 ### Editable preview pane
@@ -46,7 +46,7 @@ Any text-based file (`.md`, `.py`, `.js`, `.ts`, `.tex`, `.bib`, `.sql`, `.tf`, 
 Branch name, dirty file count, ahead/behind badges, and Push/Pull buttons live in the status bar whenever you're inside a repo. Right-click any file to stage it, or stage everything at once. The Commit button opens a sheet where you can write a message — all commands run through the terminal so you see the output.
 
 ### SSH connection manager
-Save SSH connections in the sidebar (host, user, port, key path, notes). One click opens a new tab with the terminal connected to the remote server.
+Save SSH connections in the sidebar (host, user, port, key path, notes). One click opens a new tab with the terminal connected to the remote server. Mount remote servers as SFTP volumes and browse them like a local folder.
 
 ### Appearance control
 A toolbar button cycles **System → Light → Dark**. The terminal theme follows automatically: pick a separate default theme for light mode and dark mode in Settings › Terminal.
@@ -84,8 +84,8 @@ Quick access to favourites, iCloud Drive, SSH connections, and connected volumes
 | New Tab | `⌘T` |
 | Close Tab | `⌘W` |
 | List view | `⌘1` |
-| Column view | `⌘2` |
-| Icon view | `⌘3` |
+| Icon view | `⌘2` |
+| Column view | `⌘3` |
 | Go Home | `⌘⇧H` |
 | Go to Folder… | `⌘L` |
 | Toggle hidden files | `⌘⇧.` |
@@ -100,16 +100,12 @@ Quick access to favourites, iCloud Drive, SSH connections, and connected volumes
 
 ---
 
-## What's New in 0.3.0
+## What's New in 0.4.0
 
-- **Inline folder expansion** — `›` disclosure triangles in list view expand folders in place
-- **Column view** — Finder-style 3-pane browser (⌘2)
-- **Editable preview pane** — edit any text file inline with auto-save
-- **60+ editable file types** — `.tex`, `.bib`, `.sql`, `.vue`, `.svelte`, `.dart`, `.nim`, `.zig`, `.tf`, `.nix`, and many more
-- **⌘Delete works globally** — permanent delete now works even when the terminal has focus
-- **↩ opens files globally** — Enter key opens/navigates selected items from anywhere in the window
-- **Rename fixes** — pressing Enter to confirm a rename no longer accidentally opens the file
-- **New file scroll** — newly created files scroll into view before the rename field appears
+- **New File / New Folder prompt** — name your item before it's created; no inline rename step
+- **Newly created items are selected and scrolled into view** automatically
+- **⌘Delete works reliably** from anywhere in the window, even with terminal focus
+- **Terminal typing no longer breaks** after clicking a file row
 
 ---
 
