@@ -104,12 +104,20 @@ Quick access to favourites, iCloud Drive, SSH connections, and connected volumes
 
 ---
 
-## What's New in 0.4.0
+## What's New in 0.5.0
 
-- **New File / New Folder prompt** — name your item before it's created; no inline rename step
-- **Newly created items are selected and scrolled into view** automatically
-- **⌘Delete works reliably** from anywhere in the window, even with terminal focus
-- **Terminal typing no longer breaks** after clicking a file row
+- **LemonSqueezy licensing** — Personal (3 Macs) and Team (10 Macs) tiers; activate, validate, and deactivate via LemonSqueezy License API
+- **Secure Keychain storage** — license instance ID stored in macOS Keychain
+- **Update period tracking** — 1-year or 3-year free update window; renewals stack remaining time without losing it
+- **30-day offline grace period** — app works normally without a network connection
+- **Settings → License** — shows your tier, machine limit, update expiry date, and a renewal link when expiring
+- **Sparkle update gating** — automatic update checks suppressed for expired update windows
+
+---
+
+## Community
+
+[🐛 Bug Reports](https://github.com/dorienh/iruka-releases/discussions/categories/bug-reports) · [💡 Feature Requests](https://github.com/dorienh/iruka-releases/discussions/categories/feature-requests) · [🤝 Ambassador Program](https://github.com/dorienh/iruka-releases/discussions/categories/ambassador-applications)
 
 ---
 
@@ -135,4 +143,4 @@ Iruka uses [Sparkle](https://sparkle-project.org) for automatic updates — once
 
 Iruka is developed and maintained by **Dorien Herremans**.
 
-Website: [iruka.dorienherremans.com](https://iruka.dorienherremans.com)
+Website: [iruka.dorienherremans.com](https://iruka.dorienherremans.com) · [Terms of Use](TERMS.md) · [Privacy Policy](PRIVACY.md)
