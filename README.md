@@ -11,6 +11,10 @@ Iruka is a fast, native macOS file manager inspired by KDE's Dolphin — with a 
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-black?logo=apple&logoColor=white)](https://iruka.dorienherremans.com)
 [![Latest release](https://img.shields.io/github/v/release/dorienh/iruka-releases?label=download&color=blue)](https://github.com/dorienh/iruka-releases/releases/latest)
 
+ [🐛 Bug Reports](https://github.com/dorienh/iruka-releases/discussions/categories/bug-reports) · [💡 Feature 
+  Requests](https://github.com/dorienh/iruka-releases/discussions/categories/feature-requests) · [🤝 Ambassador 
+  Program](https://github.com/dorienh/iruka-releases/discussions/categories/ambassador-applications)
+  
 [iruka.dorienherremans.com](https://iruka.dorienherremans.com)
 
 </div>
