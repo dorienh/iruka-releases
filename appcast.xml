@@ -13,6 +13,25 @@
       <sparkle:version>5</sparkle:version>
       <sparkle:shortVersionString>0.5.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <html><body style="font-family: -apple-system, sans-serif; font-size: 13px; padding: 12px;">
+        <h3 style="margin-top:0;">Iruka 0.5.0</h3>
+        <p><strong>New — Licensing</strong></p>
+        <ul>
+          <li>Personal (3 Macs) and Team (10 Macs) license tiers via LemonSqueezy</li>
+          <li>License instance ID stored securely in macOS Keychain</li>
+          <li>1-year or 3-year free update windows; renewals stack without losing remaining time</li>
+          <li>30-day offline grace period — app works normally without a network connection</li>
+          <li>Settings → License shows your tier, machine limit, and update expiry date</li>
+          <li>Renewal reminder appears in Settings when your update window is expiring</li>
+          <li>Automatic Sparkle update checks suppressed for expired update windows</li>
+        </ul>
+        <p><strong>Improved — Terminal</strong></p>
+        <ul>
+          <li>New <em>Go Here</em> button (↘) sends a one-time cd to the file browser's current folder without changing Sync state</li>
+        </ul>
+        </body></html>
+      ]]></description>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v0.5.0/Iruka-0.5.0.dmg"
         sparkle:edSignature="c1h8fLnhWGXzqlGMiZrwTG1z7/CAcTXCAgPJn14qXVjnoEAu51zk7npdIX/aPoclRII3rf7Z6GAcfwLUYTKLDg=="
@@ -26,6 +45,23 @@
       <sparkle:version>4</sparkle:version>
       <sparkle:shortVersionString>0.4.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <html><body style="font-family: -apple-system, sans-serif; font-size: 13px; padding: 12px;">
+        <h3 style="margin-top:0;">Iruka 0.4.0</h3>
+        <p><strong>New</strong></p>
+        <ul>
+          <li>New File / New Folder now prompt for a name before creating — no inline rename step needed</li>
+          <li>Newly created items are automatically selected and scrolled into view</li>
+        </ul>
+        <p><strong>Fixed</strong></p>
+        <ul>
+          <li>⌘Delete (permanent delete) now works reliably from anywhere in the window</li>
+          <li>Enter in the ⌘Delete confirmation dialog no longer navigates into the folder</li>
+          <li>Terminal typing no longer breaks after clicking a file row</li>
+          <li>Column view preview pane is now resizable</li>
+        </ul>
+        </body></html>
+      ]]></description>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v0.4.0/Iruka-0.4.0.dmg"
         sparkle:edSignature="Q6iTkk2YMk6q2ykPhE9VJ6LXg+UTuZXJ261LDKwMxBMRh1D+B8bYaPuKGcB8z/sTy53VhrIOEjM+FR9zFuYMAA=="
