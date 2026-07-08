@@ -8,6 +8,39 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 0.6.0</title>
+      <pubDate>Wed, 09 Jul 2026 00:00:00 +0000</pubDate>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>0.6.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <html><body style="font-family: -apple-system, sans-serif; font-size: 13px; padding: 12px;">
+        <h3 style="margin-top:0;">Iruka 0.6.0</h3>
+        <p><strong>New</strong></p>
+        <ul>
+          <li><strong>Recent Folders</strong> — new top section in the sidebar shows your last 6 visited directories, persisted across launches; right-click any entry to remove it</li>
+          <li><strong>SCP Receive</strong> — right-click → "Receive via SCP…" to download files from a remote server into the current folder; supports wildcards and shows a live command preview</li>
+          <li><strong>Terminal "Go Here"</strong> — one-shot cd to the current UI directory without affecting the Sync state</li>
+        </ul>
+        <p><strong>Fixed</strong></p>
+        <ul>
+          <li>Pressing Sync when unsynced now immediately navigates the terminal to the current folder</li>
+        </ul>
+        <p><strong>Changed</strong></p>
+        <ul>
+          <li>Sidebar fonts enlarged to 14 pt for better legibility</li>
+          <li>Sidebar row spacing tightened for a more compact navigation panel</li>
+        </ul>
+        </body></html>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v0.6.0/Iruka-0.6.0.dmg"
+        sparkle:edSignature="2OfzqrkyVoZk4Uut8D2ixg3NtHSTzIYDt2qHP0FQW52TADAILiQocQo27RhptbPlRSZC4mG3wQs8/qYk4wi8CA=="
+        length="7529632"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 0.5.0</title>
       <pubDate>Thu, 03 Jul 2026 00:00:00 +0000</pubDate>
       <sparkle:version>5</sparkle:version>
