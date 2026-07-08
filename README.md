@@ -50,7 +50,7 @@ Any text-based file (`.md`, `.py`, `.js`, `.ts`, `.tex`, `.bib`, `.sql`, `.tf`, 
 Branch name, dirty file count, ahead/behind badges, and Push/Pull buttons live in the status bar whenever you're inside a repo. Right-click any file to stage it, or stage everything at once. The Commit button opens a sheet where you can write a message — all commands run through the terminal so you see the output.
 
 ### SSH connection manager
-Save SSH connections in the sidebar (host, user, port, key path, notes). One click opens a new tab with the terminal connected to the remote server. Mount remote servers as SFTP volumes and browse them like a local folder.
+Save SSH connections in the sidebar (host, user, port, key path, notes). One click opens a new tab with the terminal connected to the remote server. Mount remote servers as SFTP volumes and browse them like a local folder. Right-click any folder and choose **Receive via SCP…** to download files from a remote server directly into the current directory — wildcard paths supported, with a live command preview.
 
 ### Appearance control
 A toolbar button cycles **System → Light → Dark**. The terminal theme follows automatically: pick a separate default theme for light mode and dark mode in Settings › Terminal.
@@ -68,7 +68,7 @@ Compress any selection to a `.zip` with one click. Extract `.zip`, `.tar`, `.tar
 Every action has a shortcut. Navigate with arrow keys, open with ↩, rename with a slow second click or F2, Quick Look with Space, permanent delete with ⌘⌫.
 
 ### Sidebar
-Quick access to favourites, iCloud Drive, SSH connections, and connected volumes. Drag any folder to add it as a favourite. Eject any volume with a single click.
+Quick access to **recent folders**, favourites, iCloud Drive, SSH connections, and connected volumes. The Recent section automatically tracks your last 6 visited directories (persisted across launches; right-click to remove any entry). Drag any folder to add it as a favourite. Eject any volume with a single click.
 
 ---
 
@@ -104,14 +104,13 @@ Quick access to favourites, iCloud Drive, SSH connections, and connected volumes
 
 ---
 
-## What's New in 0.5.0
+## What's New in 0.6.0
 
-- **LemonSqueezy licensing** — Personal (3 Macs) and Team (10 Macs) tiers; activate, validate, and deactivate via LemonSqueezy License API
-- **Secure Keychain storage** — license instance ID stored in macOS Keychain
-- **Update period tracking** — 1-year or 3-year free update window; renewals stack remaining time without losing it
-- **30-day offline grace period** — app works normally without a network connection
-- **Settings → License** — shows your tier, machine limit, update expiry date, and a renewal link when expiring
-- **Sparkle update gating** — automatic update checks suppressed for expired update windows
+- **Recent Folders** — new top section in the sidebar shows your last 6 visited directories, persisted across launches; right-click any entry to remove it
+- **SCP Receive** — right-click → "Receive via SCP…" to download files from a remote server into the current folder; supports wildcards and shows a live command preview
+- **Terminal "Go Here"** — one-shot `cd` to the current UI directory without affecting the Sync state
+- **Terminal Sync fix** — pressing Sync when unsynced now immediately navigates the terminal to the current folder
+- **Sidebar fonts enlarged** to 14 pt for better legibility; row spacing tightened
 
 ---
 
