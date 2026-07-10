@@ -9,6 +9,19 @@
     <language>en</language>
     <item>
       <title>Iruka 0.7.0</title>
+      <pubDate>Fri, 10 Jul 2026 05:25:58 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v0.7.0/Iruka-0.7.0.dmg"
+        sparkle:edSignature="xJi8RpM905RSaMcf7VuqgSeX6sxQ9trofTk3BOJW0jy23SKOlOwmf9VTOvZbJ2PcS9kJ7n61su0K9BpI7W4kAQ=="
+        length="7986229"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
+      <title>Iruka 0.7.0</title>
       <pubDate>Fri, 10 Jul 2026 03:12:46 +0000</pubDate>
       <sparkle:version>7</sparkle:version>
       <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
