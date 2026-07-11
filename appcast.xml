@@ -9,53 +9,14 @@
     <language>en</language>
     <item>
       <title>Iruka 0.9.0</title>
-      <pubDate>Sat, 11 Jul 2026 08:41:56 +0000</pubDate>
-      <sparkle:version>13</sparkle:version>
+      <pubDate>Sat, 11 Jul 2026 10:54:45 +0000</pubDate>
+      <sparkle:version>14</sparkle:version>
       <sparkle:shortVersionString>0.9.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v0.9.0/Iruka-0.9.0.dmg"
-        sparkle:edSignature="hTzuQllXhHClJUMtu3fDaXZnx05egKBk31Fh+DzgdbJKWz9ppggZwLL61eL/yeInrZUe5AnqwVqvOmIVD43VAw=="
-        length="8287580"
-        type="application/octet-stream"/>
-    </item>
-
-    <item>
-      <title>Iruka 0.9.0</title>
-      <pubDate>Sat, 11 Jul 2026 08:02:03 +0000</pubDate>
-      <sparkle:version>12</sparkle:version>
-      <sparkle:shortVersionString>0.9.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <enclosure
-        url="https://github.com/dorienh/iruka-releases/releases/download/v0.9.0/Iruka-0.9.0.dmg"
-        sparkle:edSignature="Gz4npri5FMpczI5EWNU+nDAHd0h7MSd288oaaTelh11pD1P0igXpaLsFOxvC655JmED87V3djmgw+D0Z+Tv6AA=="
-        length="8284639"
-        type="application/octet-stream"/>
-    </item>
-
-    <item>
-      <title>Iruka 0.9.0</title>
-      <pubDate>Sat, 11 Jul 2026 07:50:35 +0000</pubDate>
-      <sparkle:version>11</sparkle:version>
-      <sparkle:shortVersionString>0.9.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <enclosure
-        url="https://github.com/dorienh/iruka-releases/releases/download/v0.9.0/Iruka-0.9.0.dmg"
-        sparkle:edSignature="opG9uW/iDjk5XQZuGJ7RSkTq9vPJ6gPsexIpcNpNWamyeCPglaNYMYnk8QdXAOe8KbyNF/1K0oRMLiPg0690Cw=="
-        length="8284042"
-        type="application/octet-stream"/>
-    </item>
-
-    <item>
-      <title>Iruka 0.9.0</title>
-      <pubDate>Sat, 11 Jul 2026 07:06:34 +0000</pubDate>
-      <sparkle:version>10</sparkle:version>
-      <sparkle:shortVersionString>0.9.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <enclosure
-        url="https://github.com/dorienh/iruka-releases/releases/download/v0.9.0/Iruka-0.9.0.dmg"
-        sparkle:edSignature="30zRE/denxXGQmuwt1uX+7JhdZ28+DzpsuSKHChnowwGksgG3QVVUjMUQgUne2tze0BpAAOikkMd2Nr0R9lmDA=="
-        length="8290054"
+        sparkle:edSignature="cJYB4i4QVpDDkOfBbT7AWVEMDFo5qGW0yoiusXgZplyEb1Uc/rC3j/NjlRBjDOUJW0IXS9NbHJWWNmVVrk7lAg=="
+        length="8286361"
         type="application/octet-stream"/>
     </item>
 
@@ -86,19 +47,6 @@
     </item>
 
     <item>
-      <title>Iruka 0.7.0</title>
-      <pubDate>Fri, 10 Jul 2026 03:12:46 +0000</pubDate>
-      <sparkle:version>7</sparkle:version>
-      <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <enclosure
-        url="https://github.com/dorienh/iruka-releases/releases/download/v0.7.0/Iruka-0.7.0.dmg"
-        sparkle:edSignature="d8le2v6Npgj/BD1sLefAK04C4TXz6EUj+Xf9gzaUpqTRUEW0sQ++W9CmPWYch6inQKZEJL27cppIHwt2vIaDBg=="
-        length="7976244"
-        type="application/octet-stream"/>
-    </item>
-
-    <item>
       <title>Iruka 0.6.0</title>
       <pubDate>Thu, 09 Jul 2026 18:21:45 +0000</pubDate>
       <sparkle:version>6</sparkle:version>
@@ -108,39 +56,6 @@
         url="https://github.com/dorienh/iruka-releases/releases/download/v0.6.0/Iruka-0.6.0.dmg"
         sparkle:edSignature="bnhOOZaR5Y7cJ0U+kMlPA7LYj9hrOHIJzo96VYWWMUr8tOyMN/vd4JRE2n0b0xrHrf6iEEL7SdootgPAo4OkBg=="
         length="9384972"
-        type="application/octet-stream"/>
-    </item>
-
-    <item>
-      <title>Iruka 0.6.0</title>
-      <pubDate>Wed, 09 Jul 2026 00:00:00 +0000</pubDate>
-      <sparkle:version>6</sparkle:version>
-      <sparkle:shortVersionString>0.6.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[
-        <html><body style="font-family: -apple-system, sans-serif; font-size: 13px; padding: 12px;">
-        <h3 style="margin-top:0;">Iruka 0.6.0</h3>
-        <p><strong>New</strong></p>
-        <ul>
-          <li><strong>Recent Folders</strong> — new top section in the sidebar shows your last 6 visited directories, persisted across launches; right-click any entry to remove it</li>
-          <li><strong>SCP Receive</strong> — right-click → "Receive via SCP…" to download files from a remote server into the current folder; supports wildcards and shows a live command preview</li>
-          <li><strong>Terminal "Go Here"</strong> — one-shot cd to the current UI directory without affecting the Sync state</li>
-        </ul>
-        <p><strong>Fixed</strong></p>
-        <ul>
-          <li>Pressing Sync when unsynced now immediately navigates the terminal to the current folder</li>
-        </ul>
-        <p><strong>Changed</strong></p>
-        <ul>
-          <li>Sidebar fonts enlarged to 14 pt for better legibility</li>
-          <li>Sidebar row spacing tightened for a more compact navigation panel</li>
-        </ul>
-        </body></html>
-      ]]></description>
-      <enclosure
-        url="https://github.com/dorienh/iruka-releases/releases/download/v0.6.0/Iruka-0.6.0.dmg"
-        sparkle:edSignature="2OfzqrkyVoZk4Uut8D2ixg3NtHSTzIYDt2qHP0FQW52TADAILiQocQo27RhptbPlRSZC4mG3wQs8/qYk4wi8CA=="
-        length="7529632"
         type="application/octet-stream"/>
     </item>
 
