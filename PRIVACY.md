@@ -1,6 +1,6 @@
 # Iruka — Privacy Policy
 
-**Last updated: 4 July 2026**
+**Last updated: 17 July 2026**
 
 This policy explains what information Iruka collects and how it is used.
 
@@ -17,14 +17,14 @@ Iruka collects the minimum necessary to operate:
 | Update period expiry date | Determine update eligibility | On your Mac (UserDefaults) |
 | License tier and machine limit | Display your plan in Settings | On your Mac (UserDefaults) |
 
-None of this data is sent anywhere except to the LemonSqueezy license API at `api.lemonsqueezy.com` to activate or validate your license. No personal information is stored on any server controlled by Dorien Herremans.
+License data is sent only to the LemonSqueezy license API at `api.lemonsqueezy.com` to activate or validate your license. Update check data (see Sparkle section below) is stored anonymously on servers controlled by Dorien Herremans. No personal information is ever stored.
 
 ## What Iruka does not collect
 
-- No analytics or usage tracking of any kind
 - No crash reporting sent anywhere
 - No file names, paths, or contents you browse
-- No identifiers beyond the license instance ID
+- No personal identifiers — the install ID in update checks is a random number, not linked to you, your license, or your hardware
+- No advertising IDs or cross-app tracking
 
 ## Payments
 
@@ -34,18 +34,28 @@ Purchases are handled by **LemonSqueezy** (Lemon Squeezy, LLC). When you buy a l
 
 Iruka stores license information locally on your Mac using standard macOS mechanisms:
 
-- **UserDefaults** — license key, tier, expiry date (not sensitive; readable by you via `defaults read`)
+- **UserDefaults** — license key, tier, expiry date, anonymous install ID (not sensitive)
 - **Keychain** — license instance ID (protected by macOS Keychain access controls)
 
-Deactivating your license in Settings → License removes all stored data from both locations.
+Deactivating your license in Settings → License removes all stored license data from both locations.
 
 ## Sparkle (software updates)
 
-Iruka uses [Sparkle](https://sparkle-project.org) to check for updates. Sparkle contacts the appcast feed at `raw.githubusercontent.com` — a public URL — with no identifying information beyond a standard HTTP request.
+Iruka uses [Sparkle](https://sparkle-project.org) to check for updates. When checking, Sparkle may send anonymous technical details to `iruka.dorienherremans.com`:
+
+- App version and build number
+- macOS version
+- CPU architecture (Apple Silicon or Intel)
+- Mac model identifier (e.g. MacBookPro18,1)
+- System language
+- RAM amount
+- A random anonymous install ID (generated once on first launch, stored on your Mac)
+
+Each install generates a random ID stored only on your Mac and sent with update checks so we can count unique installs. It is not derived from your hardware, license, or any personal data. This data is stored anonymously to understand how many installs are active and which platforms to support.
 
 ## Your rights
 
-You can view or delete all locally stored license data at any time by deactivating your license in **Settings → License**. For questions or requests related to any personal data LemonSqueezy may hold on your behalf, contact LemonSqueezy directly.
+You can view or delete all locally stored data at any time by deactivating your license in **Settings → License**. For questions or requests related to any personal data LemonSqueezy may hold on your behalf, contact LemonSqueezy directly.
 
 ## Contact
 
