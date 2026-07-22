@@ -8,6 +8,19 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.1.2</title>
+      <pubDate>Wed, 22 Jul 2026 07:12:35 +0000</pubDate>
+      <sparkle:version>79</sparkle:version>
+      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.2/Iruka-1.1.2.dmg"
+        sparkle:edSignature="XViuaJIv3llR743kvoACRSm57WLAcSqUlm8ZeziwKCYPjfcBkIgfh+4VNvvd7OdDxdPaZChE0Sp02rDj/esyAw=="
+        length="7068573"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.1.1</title>
       <pubDate>Tue, 21 Jul 2026 08:48:52 +0000</pubDate>
       <sparkle:version>78</sparkle:version>
