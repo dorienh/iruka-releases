@@ -9,13 +9,17 @@
     <language>en</language>
     <item>
       <title>Iruka 1.1.4</title>
-      <pubDate>Thu, 06 Aug 2026 07:30:10 +0000</pubDate>
-      <sparkle:version>82</sparkle:version>
+      <pubDate>Thu, 06 Aug 2026 10:19:42 +0000</pubDate>
+      <sparkle:version>83</sparkle:version>
       <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
 <h4>Fixed</h4>
 <ul>
+<li><strong>⇥ switches panes again in dual-pane mode.</strong> It only worked right after clicking a file row; entering a pane any other way — clicking its background or tab bar, or just launching with the terminal focused — left the file browser without logical keyboard focus, so ⇥ fell through to the shell. Clicking anywhere in a pane now focuses that pane's file list, and ⇥ is handed to the terminal only when the terminal actually has keyboard focus. With a single pane there's nothing to switch to, but ⇥ no longer leaks through as a literal tab into the shell either. Tab completion still works in the terminal, the path bar, and the filter field.</li>
+<li><strong>New tabs (and folders like Documents/Desktop) no longer occasionally open empty</strong>, needing a manual Refresh. A failed or transiently-empty load is no longer treated as "already loaded" by the tab-switch optimization, so it's reloaded rather than left blank; and a folder that comes back empty right after opening (an iCloud-sync or permission-prompt race) is retried once automatically. Regression from the tab-switch speedup, in the first 1.1.4 build.</li>
+<li><strong>SFTP error messages now lead with the actual error.</strong> A failed sign-in, connection, or mount now shows what rclone actually said at the top, with the (often-unnecessary) troubleshooting checklist below — instead of burying the real error under a wall of guidance. Matches the FTP messages.</li>
+<li><strong><code>~username</code> in the path bar now resolves to that user's home directory</strong> (e.g. <code>~alice</code>), instead of ignoring the name and landing in your own home.</li>
 <li><strong>Column view: → now only drills into folders</strong>, and selects the folder's first item (like Finder), instead of opening files. Open a file with ↵ or ⌘↓.</li>
 <li><strong>Column view no longer shows an empty gap</strong> between the last column and the file preview, or a stray empty panel on the right when there's no preview — the columns now sit flush against the preview and any remaining width is just the plain background.</li>
 <li><strong>Esc reaches the terminal again.</strong> When a full-screen terminal program (e.g. Claude, vim, less) is running in the terminal pane, Esc is now passed through to it instead of being swallowed to clear the file selection.</li>
@@ -44,6 +48,9 @@
 </ul>
 <h4>Added</h4>
 <ul>
+<li><strong>Finder-standard delete shortcuts.</strong> <strong>⌘⌫</strong> now moves the selection to the Trash (it previously deleted immediately, which is the opposite of what Finder users expect from it), <strong>⌦</strong> (forward delete) joins <strong>⌫</strong> and <strong>F8</strong> as a Move-to-Trash alias, and <strong>⌥⌘⌫</strong> is now Delete Immediately — still behind its confirmation alert. Works in list, icon, and column views.</li>
+<li><strong>A Trash button in the toolbar</strong>, next to New File / New Folder — moves the selected items to the Trash, and is greyed out when nothing is selected.</li>
+<li><strong>Page Up / Page Down / Home / End navigate the active file panel</strong> (list, icon, and column views). Home and End jump to the first and last item; Page Up/Down move the selection by a screenful. Previously these keys only did anything in the terminal.</li>
 <li><strong>Shift+arrow extends the selection</strong> in both list and icon views, Finder-style: it grows (or shrinks) a contiguous range from the anchor as you press (⇧↑/↓ in list; ⇧↑/↓/←/→ in the icon grid), complementing the existing Shift-click range selection.</li>
 <li><strong>The Keyboard Shortcuts window (⌘⇧/) now has a filter box</strong> and is reorganized for findability — a "Tabs, Panes &amp; Terminal" group near the top makes cycling tabs (⌃⇥) and switching focus between the File Browser and Terminal (⌘⌥T) easy to find.</li>
 <li><strong>More Finder-style keyboard shortcuts.</strong> <strong>⌘⇧T</strong> reopens the last closed tab (at its folder); <strong>⌘D</strong> duplicates the selected files; and the Go menu gains <strong>⌘⇧D</strong> Desktop, <strong>⌘⇧O</strong> Documents, and <strong>⌘⌥L</strong> Downloads. All are listed in the Keyboard Shortcuts window (<strong>⌘⇧/</strong>).</li>
@@ -57,10 +64,11 @@
       ]]></description>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.4/Iruka-1.1.4.dmg"
-        sparkle:edSignature="kEoegMk3gO9kyB+bR/w09/N6gHP9sApxDZuB4uo6QwKEiXSbgQjXOSOWb68jfm0dCTO6TagFNhDGTAH9Wuh7Bw=="
-        length="10788617"
+        sparkle:edSignature="c+7KWcnkFCgSw0ArZDOcpi8noveDovFPX5+z0VbbgcDvKbpTeFPl77DLibvC3jKtsGyP5BCeixDCakfPqnvDBA=="
+        length="10805461"
         type="application/octet-stream"/>
     </item>
+
 
     <item>
       <title>Iruka 1.1.3</title>
