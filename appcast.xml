@@ -9,13 +9,14 @@
     <language>en</language>
     <item>
       <title>Iruka 1.1.5</title>
-      <pubDate>Fri, 07 Aug 2026 08:26:51 +0000</pubDate>
-      <sparkle:version>84</sparkle:version>
+      <pubDate>Fri, 07 Aug 2026 08:49:19 +0000</pubDate>
+      <sparkle:version>85</sparkle:version>
       <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
 <h4>Added</h4>
 <ul>
+<li><strong>Connecting via SSH no longer asks for a password you've already saved.</strong> "Connect via SSH" now answers <code>ssh</code>'s own prompt with the password stored for that connection — or the key passphrase, for a Key File or Automatic connection with an encrypted key. <code>ssh</code> only accepts a password from the terminal itself, never as an argument, so Iruka waits for the prompt and types it; the secret never appears in the command line, the process list, or your shell history. It is armed only for the command Iruka just issued, answers at most one prompt, and gives up after 20 seconds — a later <code>sudo</code> prompt in the same session is never answered.</li>
 <li><strong>Type-to-select now works in icon view.</strong> Typing a few letters jumps to the first item whose name starts with them, and pressing the same letter repeatedly cycles through the matches — the behaviour list view already had. The query resets after a short pause.</li>
 <li><strong>Column view supports multiple selection.</strong> It could only ever select one item. You can now ⌘-click to add or remove individual items, ⇧-click to select a range, extend the selection with <strong>⇧↑ / ⇧↓</strong>, and drag out a rubber-band ("elastic") selection starting on an unselected row or in the empty space below the list — matching what the list and icon views already do. <strong>Dragging files in and out of a column now works too</strong> — dragging carries the whole selection, and a folder row highlights and accepts a drop (dropping beside the rows puts the files in that column's own folder), with the same ⌥-copy / ⌘-move rules as the other views — and the right-click menu acts on every selected item (Copy, Cut, Duplicate, Compress, Move to Trash, Send via SCP, Permissions) instead of only the row you clicked. As in Finder, a selection lives within one column: selecting in another column starts fresh, since each column is a different folder. Plain clicks and arrow keys behave exactly as before, and the list and icon views are untouched.</li>
 <li><strong>⌫ now asks before deleting, and you can change what it does.</strong> Settings → General → Deleting offers <strong>Ask first</strong> (the new default), <strong>Move to Trash</strong>, or <strong>Do nothing</strong> (as in Finder). Previously a bare ⌫ moved the selection to the Trash instantly with no feedback of any kind — one user lost a folder tree of tens of thousands of images to a stray press without noticing it had happened. <strong>⌦ (forward delete) no longer deletes at all</strong>, matching Finder; ⌘⌫ still moves to the Trash without asking, and ⌥⌘⌫ still deletes immediately behind its own confirmation.</li>
@@ -24,6 +25,11 @@
 <li><strong>Undo re-selects what it restored.</strong> Undoing a delete puts the files back <em>and</em> selects them again, so ⌘Z leaves you where you were.</li>
 </ul>
 <h4>Fixed</h4>
+<ul>
+<li><strong>The SSH agent works in the terminal.</strong> <code>ssh</code> in Iruka's terminal failed with "Permission denied (publickey)" on any server that authenticates by agent, even with the agent running and the key loaded. The shell was being started with a minimal environment that omitted <code>SSH_AUTH_SOCK</code>, so it had no agent to ask — the shell now inherits it. This affects agent-authenticated connections generally, not just saved ones, and <code>ssh-add -l</code> in the terminal now lists your keys.</li>
+<li><strong>A missing SSH agent now says so.</strong> Choosing SSH Agent authentication when no agent is reachable produced an ordinary "authentication failed", which looked as though the agent had been ignored. Iruka now checks before mounting: if no agent socket is visible it says so and shows the <code>ssh-add</code> command to start one, and if the agent is running but holds no keys it says that instead.</li>
+</ul>
+<p>---</p>
 <ul>
 <li><strong>Browsing in column view no longer throws you into another view.</strong> Folders remember the view they were last shown in, and drilling into one saved as Icons or List switched the whole tab to it mid-navigation, discarding the columns you were browsing. Walking the column chain now keeps you in column view; a folder's saved view still applies when you arrive there any other way (sidebar, path bar, a new tab).</li>
 <li><strong>Redo (⇧⌘Z) works.</strong> Every file operation registered an undo whose inverse called the filesystem directly, and never registered anything itself — but macOS only builds the redo stack from registrations made <em>while an undo is running</em>. The menu item existed and was permanently greyed out. All twelve operations (trash, copy, move, duplicate, new file/folder, rename, batch rename, permissions, symlink, hardlink, compress, extract) now register their redo, so undo and redo step back and forth properly.</li>
@@ -42,10 +48,11 @@
       ]]></description>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.5/Iruka-1.1.5.dmg"
-        sparkle:edSignature="XhqNqArc0mNdB2R4FhLiMqmT5wQ4cX0ZnvvpPMAQ49VupeQAIgjXiWhA5qFRVZfrw9y7XMx0uGY3XI6KJK9lBQ=="
-        length="10963728"
+        sparkle:edSignature="Zkw8ZHeEZV49qxjp+wwHRXo1cOOlf3gxJi/SGwAR62W+A2/a7PAGGVPdOgpkOTmiJ/gvKEX0x/5iuB/AAPO7BA=="
+        length="10984370"
         type="application/octet-stream"/>
     </item>
+
 
     <item>
       <title>Iruka 1.1.4</title>
