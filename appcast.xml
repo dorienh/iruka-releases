@@ -9,8 +9,8 @@
     <language>en</language>
     <item>
       <title>Iruka 1.1.5</title>
-      <pubDate>Fri, 07 Aug 2026 08:49:19 +0000</pubDate>
-      <sparkle:version>85</sparkle:version>
+      <pubDate>Fri, 07 Aug 2026 10:12:06 +0000</pubDate>
+      <sparkle:version>86</sparkle:version>
       <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
@@ -26,6 +26,7 @@
 </ul>
 <h4>Fixed</h4>
 <ul>
+<li><strong>Folders no longer open empty, needing a Refresh.</strong> Once you had changed the sort order, opening a new tab (or a folder) could leave the list blank: applying the sort to the new, still-empty tab started a background re-sort that captured nothing, and when it finished a moment later it wrote that emptiness back over the listing the folder had just loaded. In a quiet folder nothing ever repainted it, so it stayed blank until Refresh; in a busy one like your home folder it corrected itself a second or two later, which is why it looked like a delay in one place and a permanent failure in another. Reported since 1.0.4.</li>
 <li><strong>The SSH agent works in the terminal.</strong> <code>ssh</code> in Iruka's terminal failed with "Permission denied (publickey)" on any server that authenticates by agent, even with the agent running and the key loaded. The shell was being started with a minimal environment that omitted <code>SSH_AUTH_SOCK</code>, so it had no agent to ask — the shell now inherits it. This affects agent-authenticated connections generally, not just saved ones, and <code>ssh-add -l</code> in the terminal now lists your keys.</li>
 <li><strong>A missing SSH agent now says so.</strong> Choosing SSH Agent authentication when no agent is reachable produced an ordinary "authentication failed", which looked as though the agent had been ignored. Iruka now checks before mounting: if no agent socket is visible it says so and shows the <code>ssh-add</code> command to start one, and if the agent is running but holds no keys it says that instead.</li>
 </ul>
@@ -42,16 +43,22 @@
 </ul>
 <h4>Changed</h4>
 <ul>
+<li><strong>Type-ahead in column view searches the folder you're standing in.</strong> Selecting a folder opens its contents in the next column, and typing a letter was searching <em>inside</em> it rather than among its siblings. Typing now always searches the column holding the selected item.</li>
+<li><strong>Type-ahead now goes to the nearest name when nothing matches.</strong> Typing a letter with no matching file used to do nothing at all; it now jumps to where that letter would fall alphabetically, so you can get near a name you only half-remember. Typing the same letter repeatedly still cycles through the exact matches, and <strong>column view has type-ahead for the first time</strong> — all three views now behave identically.</li>
+</ul>
+<p>---</p>
+<ul>
 <li><strong>Clearer SFTP authentication settings.</strong> The "Automatic" method now explains that it is key-based only and never tries a password (so a password-only server needs the "Password" method), and that mounting doesn't read <code>~/.ssh/config</code>. The Username field no longer suggests it can be left blank and taken from <code>~/.ssh/config</code> — that's true of the terminal's <code>ssh</code>, but not of mounting, where it's required.</li>
 </ul>
 <p>---</p>
       ]]></description>
       <enclosure
         url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.5/Iruka-1.1.5.dmg"
-        sparkle:edSignature="Zkw8ZHeEZV49qxjp+wwHRXo1cOOlf3gxJi/SGwAR62W+A2/a7PAGGVPdOgpkOTmiJ/gvKEX0x/5iuB/AAPO7BA=="
-        length="10984370"
+        sparkle:edSignature="hLGiXyzg6pYtT0t1cpfLdjB3IXY57ljI7SjlmKIGbabPIthzp3GHC9B2RD+YOPyvETVBhI5dZDxUXxOHW6X9Bg=="
+        length="10994743"
         type="application/octet-stream"/>
     </item>
+
 
 
     <item>
