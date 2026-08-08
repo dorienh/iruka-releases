@@ -8,6 +8,47 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.1.6.0</title>
+      <pubDate>Sat, 08 Aug 2026 13:37:38 +0000</pubDate>
+      <sparkle:version>87</sparkle:version>
+      <sparkle:shortVersionString>1.1.6.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h4>Added</h4>
+<ul>
+<li><strong>Places and Favorites can be reordered.</strong> Settings → Sidebar now lets you drag Places into whatever order suits you — the built-in ones and your cloud folders together in a single list — alongside the existing switches for hiding them. Favorites are listed there too: drag to reorder, remove with the minus button, and <strong>Add Folder…</strong> picks one without having to navigate to it first. A favourite that duplicates a Place stays hidden from the sidebar, but is still listed in Settings so you can reorder or remove it — and it reappears in the sidebar if you hide that Place, or the whole Places section. Anything new, such as a cloud account added later, appears at the end rather than disturbing your arrangement.</li>
+<li><strong>Iruka reopens where you left off.</strong> Quitting now remembers the window's size, position and display, whether the second pane, preview pane and terminal were open, every tab in both panes with its folder, and each tab's sort order and hidden-files setting. Relaunching — including after an update — puts it all back instead of leaving you to rebuild a dual-pane layout by hand each time. Folders that have since disappeared, such as a volume that isn't mounted yet, are skipped rather than reopened as errors. Turn it off with <strong>Settings → General → On launch → Start fresh</strong>, which also forgets the stored session.</li>
+<li><strong>Optionally connect automatically.</strong> Edit Connection has a <strong>Terminal</strong> switch — "Open an SSH session when I browse this server" — off by default. Per connection rather than global, because whether you want a shell on the box or a local shell pointed at the mount depends on the server.</li>
+<li><strong>Open an SSH session that follows the file browser.</strong> While browsing a mounted server, the terminal shows a <strong>network</strong> button: it logs into that server over SSH, lands in the folder you're looking at, and — unlike an <code>ssh</code> you type yourself — keeps following as you navigate, translating each folder in the volume to its path on the server. Commands then run <em>on the server</em> rather than through the mount, which is both far faster and immune to a stalled mount hanging the shell. It signs in with the connection's saved password or key passphrase, shows <code>ssh &lt;host&gt;</code> in the terminal header while active, and hands control back to the local shell the moment you <code>exit</code>.</li>
+<li><strong>Mount an SFTP server as root.</strong> Edit Connection now has a <strong>Mount as root</strong> switch that runs the server's SFTP service under <code>sudo</code>, so the volume can read and write anywhere on the machine instead of only where your account has access. Off by default. <code>scp</code> itself can never be elevated — it runs a fixed command as the login user — but the SFTP subsystem can be replaced wholesale, and elevating it covers every copy, move, rename and delete the mount performs. Before mounting, Iruka finds the server's <code>sftp-server</code> (reading <code>Subsystem sftp</code> from its <code>sshd_config</code>) and checks that <code>sudo</code> won't ask for a password — it can't be answered, since the SFTP protocol occupies the channel a prompt would use — and if it does, the error names the exact <code>visudo</code> line to add, scoped to that one command. The mounted volume is labelled "(root)" so it's obvious wherever it appears. Servers configured for the built-in <code>internal-sftp</code> have no binary to elevate, and are told so.</li>
+<li><strong>Cloud folders appear in the sidebar.</strong> OneDrive, Google Drive, Box, Dropbox and anything else using macOS's File Provider live under <code>~/Library/CloudStorage</code>, which is easy to miss unless you know it's there. Each account now shows up under Places, the way Finder lists them. These are ordinary local folders kept in sync by the provider's own app — nothing is mounted, and nothing needs setting up. Each account can be hidden individually in Settings → Sidebar, listed there under <strong>Cloud folders</strong>.</li>
+</ul>
+<p>---</p>
+<h4>Changed</h4>
+<ul>
+<li><strong>Sync now says why it paused.</strong> The indicator reads "Sync · ssh" or "Sync · vim" rather than just going quiet, with a tooltip explaining it resumes when that program exits — a paused Sync used to be indistinguishable from a setting being ignored.</li>
+<li><strong>Sync keeps following through <code>su</code> and <code>sudo</code>.</strong> It used to stop the moment the shell had any child process for a few seconds — <code>su</code>, <code>vim</code> and a long build were indistinguishable to it. It now looks at <em>what</em> is running: anything that is a shell or hands straight to one (<code>su</code>, <code>sudo</code>, <code>doas</code>, <code>login</code>, <code>nix-shell</code>, nested shells of every flavour) keeps following, while an editor, pager, REPL or build still pauses it — sending <code>cd</code> to those would type it into whatever they're doing. A hand-typed <code>ssh</code> also still pauses, deliberately: the paths would be local ones the other machine doesn't have. <strong><code>tmux</code>, <code>screen</code> and <code>zellij</code> pause Sync by default</strong>, because their panes run under a separate process that Iruka can't see into; if yours are usually at a shell prompt, <strong>Settings → Terminal</strong> has a switch to follow them anyway.</li>
+<li><strong>Closing a tab now closes its shell.</strong> The shell survived the tab, so an SSH session started in it stayed connected with nothing left to reach it.</li>
+<li><strong>The terminal's buttons say what they do.</strong> The three glyphs above the terminal were 11-point icons with no labels; they're now larger and captioned — <strong>Browser here</strong>, <strong>Terminal here</strong>, <strong>SSH</strong> — so it's clear which direction each one moves things.</li>
+<li><strong>Settings are easier to find.</strong> The Appearance tab had grown into a catch-all holding deleting, preview and update options. Those moved to a new <strong>General</strong> tab; Appearance now covers just the theme and text size.</li>
+<li><strong>Saved passwords are now kept in the macOS Keychain.</strong> SSH and server passwords, key passphrases and cloud provider secrets were stored in plain text in a file under Application Support — readable by anything running as you, and copied unencrypted into backups. They now live in the Keychain, encrypted at rest. Existing saved credentials are moved across in one pass at launch, and the plaintext copy is deleted only after the Keychain copy has been read back and verified, so nothing is lost if the Keychain is unavailable. No prompts: an app is never asked to approve access to items it created itself. (Credentials were originally kept out of the Keychain because Iruka was ad-hoc signed and macOS treated every update as a different app; it has been signed with a stable Developer ID since build 58, so that no longer applies.)</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>No more <code>cd</code> typed into vim.</strong> With a full-screen program running — an editor, pager or <code>top</code> — Sync now holds the <code>cd</code> back and sends it once you quit, instead of the command appearing in your document. This works even when the program is running on a server through an SSH session Iruka opened, where it previously had no way to tell: it watches the terminal screen rather than local processes, so <code>ssh</code>, then <code>su</code>, then <code>vim</code> is caught like anything else.</li>
+<li><strong>Saved SSH passwords no longer go missing.</strong> Editing a connection could clear its stored password and key passphrase — the update path defaulted both secrets to empty, and empty means "forget this one", so changing any setting on a connection wiped its credentials. Secrets are now left alone unless you actually change them, and a failed write restores the previous value instead of leaving nothing behind.</li>
+<li><strong>"Setup Guide" links now open the actual documentation.</strong> Every Setup Guide button in the sidebar's mount warnings pointed at <code>iruka.app</code>, which isn't Iruka's site — it answers every address with an unrelated landing page, so the links silently led somewhere useless rather than failing visibly. They now open the real docs.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.6.0/Iruka-1.1.6.0.dmg"
+        sparkle:edSignature="tDndf/gTKHqjMpXzvRyZz3rT2Yxktbg9TDJ0shVMpbwPwgXyuKqBwbM70H39omR1ml7w6r93MzXecm1KCoCyBw=="
+        length="11240594"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.1.5</title>
       <pubDate>Fri, 07 Aug 2026 10:12:06 +0000</pubDate>
       <sparkle:version>86</sparkle:version>
