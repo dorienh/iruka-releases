@@ -8,6 +8,35 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.1.7.2</title>
+      <pubDate>Wed, 12 Aug 2026 10:03:00 +0000</pubDate>
+      <sparkle:version>90</sparkle:version>
+      <sparkle:shortVersionString>1.1.7.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h4>Added</h4>
+<ul>
+<li><strong>“Open in Iruka” is now in Finder's own right-click menu.</strong> Right-click a folder — or the empty space inside the folder you're looking at — and Open in Iruka is there directly, no longer tucked away under the Services submenu. Select several folders and each opens in its own tab; right-click a file and you get the folder it lives in. The same item can go on Finder's toolbar as a button: right-click the toolbar, choose Customize Toolbar, and drag Iruka's icon up. macOS asks you to switch this on first — <strong>System Settings → General → Login Items &amp; Extensions → Finder Extensions</strong>, then tick Iruka — and <strong>Settings → General → Finder Integration</strong> tells you whether it's on and takes you straight there. The Services item is still there for anyone who has given it a keyboard shortcut.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>The menu bar no longer has two menus called View.</strong> There were genuinely two, sitting a few menus apart and both carrying macOS's own Show Tab Bar and Enter Full Screen items, so which one held Icon View or Show Terminal was a coin toss. There is now one View menu with everything in it.</li>
+</ul>
+<h4>Changed</h4>
+<ul>
+<li><strong>Copy to Other Pane and Move to Other Pane have moved into the Edit menu.</strong> They sit just below Duplicate, next to Copy and Paste where operations on the selection belong, instead of in a menu of their own holding two items. <strong>⌥⌘C</strong> and <strong>⌥⌘M</strong> still work, and so does any shortcut you assigned to them yourself — the commands are named exactly as before, only the menu they live in has changed.</li>
+<li><strong>Keyboard Shortcuts is listed once, under Help.</strong> It also appeared in the Window menu among Minimize and Zoom, so the same window was offered twice in two different places.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.7.2/Iruka-1.1.7.2.dmg"
+        sparkle:edSignature="naUx5Y5sTOq1881taOOYxDVD4ERE321cE0q7via1+OqsTHyyUySnnzmziZoo2Z1eLWf/taE6DF+R/Bw8vsERAA=="
+        length="11607218"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.1.7.1</title>
       <pubDate>Wed, 12 Aug 2026 08:38:12 +0000</pubDate>
       <sparkle:version>89</sparkle:version>
