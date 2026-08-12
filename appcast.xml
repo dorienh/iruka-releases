@@ -8,6 +8,37 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.1.7.1</title>
+      <pubDate>Wed, 12 Aug 2026 08:38:12 +0000</pubDate>
+      <sparkle:version>89</sparkle:version>
+      <sparkle:shortVersionString>1.1.7.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h4>Added</h4>
+<ul>
+<li><strong>Open a folder in Iruka from anywhere on the system.</strong> Right-clicking a folder in Finder now offers <strong>Services → Open in Iruka</strong>, and you can give that a keyboard shortcut under System Settings → Keyboard → Keyboard Shortcuts → Services — so a folder you're looking at in Finder is one keystroke away from an Iruka tab. Iruka also opens a folder handed to it by <code>open -a Iruka some-folder</code> in a terminal, by an <code>iruka://</code> link such as <code>iruka:///Users/you/Documents</code> for scripts and automation, and by dropping a folder on its Dock icon. If Iruka isn't running, it launches and opens the folder; if it is, the folder arrives as a new tab. There's a <strong>Settings → General → Finder Integration</strong> section collecting all of this. What macOS does <em>not</em> allow: double-clicking a folder in Finder or on the Desktop still opens Finder, and folders can't be reassigned to another app the way documents can — that restriction is Apple's and applies to every file manager, not just Iruka.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>A folder opened inside another one now keeps up with what's on disk.</strong> Expanding a folder in place read its contents once and then never looked again, so anything that changed inside it afterwards went unnoticed — drag a file out of an expanded folder and it moved on disk but stayed on screen, and Refresh couldn't clear it either, because Refresh reloads the folder you're <em>in</em> and never reached the rows nested under it. Expanded folders are now watched like any other, so they update on their own, whether the change came from Iruka, from Finder, or from a shell. Closing one and opening it again also re-reads it rather than showing what it looked like last time.</li>
+<li><strong>Text size now applies to the whole sidebar and to column view.</strong> Enlarging the interface text moved Places, Favorites and Volumes but left the section headings, and the SSH, Servers, Cloud and Apps entries, at their old size — and column view ignored the setting entirely. Every one of them scales now, and column rows grow with their text instead of staying a fixed height.</li>
+<li><strong>The explanations in Settings → Sidebar are readable again.</strong> Each one was cut off mid-sentence, and the heading of one group could hang above the rows of the next as you scrolled. They now wrap to as many lines as they need and stay with the group they belong to.</li>
+<li><strong>Opening Iruka for the first time no longer needs a working internet connection.</strong> The notarisation ticket now travels inside the app rather than only on the disk image it came in, so a first launch on a machine that's offline — or behind a strict proxy — no longer risks macOS reporting that it can't check the app for malicious software.</li>
+</ul>
+<h4>Changed</h4>
+<ul>
+<li><strong>The sidebar fits a third more in the same space.</strong> Every row was 32pt tall around 16pt of content, so a sidebar with a few sections' worth of places, favourites and connections ran out of room long before it ran out of screen. Rows are now 24pt, and every section uses the same spacing — places, favourites, apps, volumes and each kind of connection line up with one another instead of drifting apart. Section headings keep a little more room above them, so the groups still read as separate at the tighter spacing. Nothing else about the sidebar changes: the same translucency, the same headings, and the highlight on the folder you're looking at still fills exactly its own row.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.7.1/Iruka-1.1.7.1.dmg"
+        sparkle:edSignature="B1Cl98qbPpvD3X6n0V6IOB0NN6b42vwTVAGdQYJ4yWyK7iAkp0lDpmY4diDBmyak9ZY9U6k3MA+ZpYZJCHN9Cg=="
+        length="11546487"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.1.7.0</title>
       <pubDate>Tue, 11 Aug 2026 03:47:45 +0000</pubDate>
       <sparkle:version>88</sparkle:version>
