@@ -8,6 +8,31 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.1.8.2</title>
+      <pubDate>Thu, 20 Aug 2026 18:57:23 +0000</pubDate>
+      <sparkle:version>93</sparkle:version>
+      <sparkle:shortVersionString>1.1.8.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h3>The One Where the Drag Lands and the Mount Finds fuse-t</h3>
+<h4>Fixed</h4>
+<ul>
+<li><strong>Dragging a file from one pane to the other works again.</strong> The cursor showed a copy badge, then the file flew back to where it started — no copy, no move, and no warning even when a file of the same name was already there. Each pane watches the mouse for itself, and since 1.1.8.0 a pane kept the drag it had armed from your last click in it, with nothing ever clearing it. So a drag begun in one pane was picked up by the other as well, which started a second drag carrying that pane's own earlier selection: two drags at once, and the drop refused. The files the drop then thought it was carrying already lived in the destination, so even when one did land it correctly decided there was nothing to do — and said nothing. Most likely to bite exactly when you had clicked something in the destination pane first, which is how anyone lines a drag up.</li>
+<li><strong>Each folder and each tab keeps its own scroll position in list view.</strong> The list used to carry a single scroll position across every folder opened in that pane, so arriving in a folder could leave you part-way down it rather than at the top — and where the new folder held fewer items than you had already scrolled past, there was nothing to show at that position. Opening a folder now starts at the top of it, and each tab returns to where you left it instead of wherever the other tab had reached.</li>
+<li><strong>Eject shows up next to removable drives again.</strong> A USB hard drive, many thumb drives, and network volumes never reported themselves as "ejectable" or "removable" — only as not internal — so the button was never offered. It now follows Finder's rule, and it stays visible rather than appearing only on hover.</li>
+<li><strong>Mounting now uses fuse-t when you have it, instead of an unusable macFUSE.</strong> If both FUSE layers were installed, every SFTP, FTP and cloud mount went through macFUSE — rclone looks for that one first and only reaches fuse-t if it finds nothing else — so the layer Iruka's own setup steps tell you to install was the one it never used. That was invisible while macFUSE worked, and fatal when it didn't: on a macOS newer than the installed macFUSE supports, mounting failed with <em>mount_macfuse: the file system is not available</em> while a perfectly good fuse-t sat unused, and the only fix was to uninstall macFUSE entirely. Iruka now asks for fuse-t by name and falls back to macFUSE only if that fails. Where fuse-t is set to use its FSKit backend, which can't mount on recent macOS, Iruka mounts through its NFS backend for that one mount without changing your system configuration.</li>
+<li><strong>A mount that fails says which FUSE layer failed.</strong> The advice was written for someone with no FUSE installed, so it told anyone whose FUSE layer was broken to install the thing they already had. It now names what was tried, and recognises the two failures worth naming: a macFUSE too old for the running macOS, and fuse-t's FSKit backend refusing to mount.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.1.8.2/Iruka-1.1.8.2.dmg"
+        sparkle:edSignature="bduKGhV07TsczPuFlUoVpLZZCXRLCgHMj21SyhP1euEXnPITIfLxc7yOyk4Ten9yd3ymyvMiGB/NbbRTz2V9BQ=="
+        length="13368687"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.1.8.1</title>
       <pubDate>Wed, 19 Aug 2026 22:32:18 +0000</pubDate>
       <sparkle:version>92</sparkle:version>
