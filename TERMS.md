@@ -38,7 +38,11 @@ Refund requests are handled at the discretion of Dorien Herremans within 14 days
 
 ## 8. Updates
 
-License tiers include free updates for the period stated at purchase (1 year or 3 years from the date the license key was issued). After that period the app continues to function; only access to future updates requires renewal.
+License tiers include free updates for the period stated at purchase (1 year or 3 years from the date of purchase). After that period the app continues to function indefinitely; only continued updates require renewal. Renewing early does not forfeit the time remaining on your current period — whatever is left is added to the new one.
+
+Once your update period ends, Iruka stops offering updates to you: the app will not check for or install them, and we will not notify you of new releases. We do not technically prevent you from obtaining a later version by other means, and the public download on the website is always the current release. Renewing is what keeps updates arriving automatically, and is what funds continued development.
+
+A renewal is applied on each Mac you use it on, from Settings → License → Apply a Renewal Key. It extends that Mac's update period; it does not transfer between Macs on its own.
 
 ## 9. Termination
 
