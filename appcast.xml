@@ -8,6 +8,53 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.2.0.0</title>
+      <pubDate>Wed, 16 Sep 2026 05:44:48 +0000</pubDate>
+      <sparkle:version>96</sparkle:version>
+      <sparkle:shortVersionString>1.2.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h3>The One With Hardened License Handling</h3>
+<h4>Added</h4>
+<ul>
+<li><strong>The file you have selected is named in full at the bottom of the window.</strong> Every view has to abbreviate a long name somewhere — the icon view worst of all, in a cell 88 points wide — so there was nowhere to read the whole thing without hovering and waiting for a tooltip. A single selected file now has its full name in the status bar, beside the item count.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>Long names keep their ends.</strong> A name too long for its column was cut at the end, which removes exactly the part that tells two files apart: the extension, and the <em>"-v2"</em>, <em>"-final"</em>, <em>"(1)"</em> people put on the end. A folder of screenshots became a column of identical-looking rows. Names are now shortened in the middle, as Finder does, in the list, the columns and the icon grid.</li>
+<li><strong>Iruka no longer asks for permissions before you have done anything.</strong> On a fresh install a stack of consent sheets — Downloads, Documents, iCloud and more — appeared in front of the Full Disk Access window at first launch. It was checking whether each sidebar folder existed, and touching a protected folder is what raises the prompt. It no longer asks a question it knows the answer to: Desktop, Documents, Downloads, Music, Movies and Pictures are made by macOS and are always there.</li>
+<li><strong>Recent sits below Places and Favorites.</strong> It was above them, so every folder you opened pushed the lists you arranged further down the sidebar and the row you were reaching for was never twice in the same place. A sidebar you have rearranged yourself is left as you left it.</li>
+<li><strong><code>.pjs</code> files can be read and selected.</strong> They are JavaScript, but the extension was in no list, so they opened in the preview that renders a file without letting you select a line of it.</li>
+<li><strong>The toolbar's icons are still reachable when the window is narrow.</strong> A row of icons that does not fit is moved under the <code>»</code> button at the end of the toolbar, and that list previously showed a single icon with no way to reach the rest.</li>
+<li><strong>A licence is never deleted from your Mac.</strong> If the licence server ever answered "not valid" — which it does for a refund, and would have done when a key's one-year mark passed — Iruka erased your licence key, email, tier and, worst of all, the activation record binding that Mac to a seat you had already used. Re-entering the key then consumed a <em>second</em> seat of your three (or ten). Nothing is deleted now. The only thing that clears a licence is you choosing to deactivate a Mac, which releases the seat properly first.</li>
+<li><strong>A renewal is remembered after you quit.</strong> A renewal applied once the update period had already ended was forgotten on the next launch, which reported the period as expired again and stopped offering updates until Iruka next reached the licence server.</li>
+<li><strong>An expired update window no longer looks like an invalid licence.</strong> Iruka now reads <em>why</em> the server said no. Your licence is perpetual and only the update window ends, so a key past its update period keeps the app fully working and simply stops offering updates, with the usual offer to extend. Only a licence explicitly disabled by us — a refund — stops access.</li>
+<li><strong>The free trial is 30 calendar days from your first launch, and harder to reset.</strong> The 30 days are unchanged — what changed is that the date is now recorded in three places and signed, so deleting a file or turning the clock back no longer starts it over. A trial in progress keeps exactly the days it had.</li>
+<li><strong>Renewing no longer uses up your Macs.</strong> A renewal is a separate key with its own activation slots, and Iruka used to move each Mac onto it — which left slots stranded on the old key, and eventually meant a replacement Mac could be refused by both keys at once. Your licence key now stays your licence; a renewal is recorded alongside it and extends the update period. Each renewal you have applied holds one slot on its own key, for as long as it is extending your period, and applying a second renewal does not disturb the first. Deactivating a Mac releases every slot it holds, and activating it again takes them all back without you pasting a single renewal key.</li>
+<li><strong>Nothing sends you straight to a shop.</strong> Every licensing prompt — the sidebar badge, the update-period alert, the new-version nudge — now opens Settings ▸ License, which has both the renewal link and a field to paste a key you already bought. Going directly to checkout assumed you had not purchased yet, which is the wrong assumption for most people seeing these messages.</li>
+<li><strong>The renewal offer appears 15 days before your period ends</strong>, rather than only after it has closed. Renewing early is free now — the time you have left carries over — so there is no reason to make you wait.</li>
+<li><strong>"Updates Expired" opens Settings, not the store.</strong> Clicking it went straight to checkout, which assumed the reason you clicked was that you had not bought a renewal — so anyone who already had one, key sitting in their email, was sent to buy a second with nowhere to paste the first. It now opens Settings ▸ License, which offers both.</li>
+<li><strong>Settings can accept a renewal key.</strong> The key field only existed before you were licensed, so there was nowhere to paste a renewal. Settings ▸ License now has an <strong>Apply a Renewal Key</strong> field whenever you are licensed.</li>
+<li><strong>Revoked licences no longer receive automatic updates</strong>, and licences whose update period is open no longer have them blocked — the check was the wrong way round.</li>
+<li><strong>A renewal can only be applied to a Mac that already has your licence.</strong> Renewals are extensions of a licence you own, but the store issues them as full keys with their own activation slots — so entering one on a fresh Mac used to grant a whole extra set of machines at renewal price. Iruka now asks you to activate your original key first.</li>
+<li><strong>A revoked licence stops working.</strong> Licence keys no longer expire, so if the store reports one as expired or disabled it can only mean it was withdrawn — a refund, or one we disabled — and Iruka now treats both the same way.</li>
+<li><strong>A Mac that lost its activation says so, with your key ready to go.</strong> If one of your activation slots was released elsewhere, Iruka used to say your licence was invalid and offer to sell you one. It now tells you exactly what happened, keeps your key, and re-activating is a single click.</li>
+<li><strong>Renewing early keeps the days you had left.</strong> Whatever time remains on your current update period is carried over to the renewed one, so there is no reason to wait until the last moment — and no way to lose time by not waiting.</li>
+<li><strong>A licensed Mac can never start a trial.</strong> A stored licence key stops the trial clock from running at all, so a licence problem can never quietly turn into "your trial has expired".</li>
+<li><strong>Your update period is re-checked against the store, not just remembered.</strong> Iruka now works out your update window from the two things only the licence server knows — when you bought, and which edition — every time it checks your licence, instead of trusting a date cached on disk. If that record is ever wrong, the correct one replaces it the next time you are online.</li>
+<li><strong>A licence never has to be re-activated because of a date.</strong> Licence keys are perpetual, so adding or replacing a Mac keeps working for as long as you own the licence, not for a year after you bought it.</li>
+<li><strong>Check for Updates behaves correctly for expired update periods.</strong> The offer to extend now appears for anyone holding a licence whose update window has closed; trials still update normally.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.2.0.0/Iruka-1.2.0.0.dmg"
+        sparkle:edSignature="T/Go3B0OI8cjEQZQOcbdzOs+twYBjvWQ/ODV7aE7/BcTOKaLUFvxd0XoyvCX4d/NKoCHj8SVtegZgqPBK7GdDQ=="
+        length="10630110"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.1.8.3</title>
       <pubDate>Sat, 05 Sep 2026 10:39:49 +0000</pubDate>
       <sparkle:version>94</sparkle:version>
