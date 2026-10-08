@@ -8,6 +8,32 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.2.0.2</title>
+      <pubDate>Thu, 08 Oct 2026 16:43:46 +0000</pubDate>
+      <sparkle:version>98</sparkle:version>
+      <sparkle:shortVersionString>1.2.0.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h3>The One With The Scrub Bar</h3>
+<h4>Added</h4>
+<ul>
+<li><strong>The video preview has a timeline you can drag.</strong> Audio and video were drawn by Quick Look in its compact style, which gives you a play button and nothing else — no way to skip forward, or back over the bit you just missed, without opening the file in another application. They now play through AVKit, with the full transport bar: a draggable timeline, volume, playback speed and full screen. Anything macOS can't actually decode (<code>.mkv</code>, most <code>.webm</code>) still falls back to Quick Look exactly as before, and a <code>.ts</code> file is still treated as TypeScript rather than as a transport stream. Audio files show their name and a waveform instead of a black rectangle.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>Opening a video no longer leaves the preview playing underneath it.</strong> Double-clicking a file handed it to its real player — VLC, QuickTime — while the preview pane carried on playing the same thing behind it, two soundtracks at once, and the one in the preview had no visible controls to stop it. Audio did the same. Opening a file in another application now pauses the preview first, whether you double-clicked it, used Open With, or opened it from the column browser or Advanced Search.</li>
+<li><strong>The terminal no longer claims a <code>cd</code> is queued while your shell is still starting up.</strong> The orange <strong>cd pending</strong> badge was shown whenever the shell had a child process running — which is also true for the whole of a slow <code>.zshrc</code>, so at launch every tab announced a queued <code>cd</code> and held the badge until its startup scripts finished. On a profile that loads pyenv, nvm or a large <code>compinit</code> that is minutes, with nothing queued at all. The badge now appears only when there really is a <code>cd</code> waiting to be delivered.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.2.0.2/Iruka-1.2.0.2.dmg"
+        sparkle:edSignature="d9aLFuawDhy3rrSCUSzCCyB048Oo9MicVdcytMj5YWddVr4YRm9QTPVz7vig+crevAHNQoAS3lHxOa2OkOBnDw=="
+        length="10915074"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.2.0.1</title>
       <pubDate>Sun, 27 Sep 2026 16:15:54 +0000</pubDate>
       <sparkle:version>97</sparkle:version>
