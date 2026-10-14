@@ -11,11 +11,36 @@ Iruka is a fast, native macOS file manager inspired by KDE's Dolphin — with a 
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-black?logo=apple&logoColor=white)](https://iruka.sh)
 [![Latest release](https://img.shields.io/github/v/release/dorienh/iruka-releases?label=download&color=blue)](https://github.com/dorienh/iruka-releases/releases/latest)
 
- [📖 Documentation](https://iruka.sh/docs) · [🐛 Bug Reports](https://github.com/dorienh/iruka-releases/issues) · [💡 Feature Requests](https://github.com/dorienh/iruka-releases/issues) · [🤝 Ambassador Program](https://github.com/dorienh/iruka-releases/discussions/categories/ambassador-applications)
+```bash
+brew install --cask dorienh/iruka/iruka
+```
 
-[iruka.sh](https://iruka.sh)
+or **[download the DMG](https://github.com/dorienh/iruka-releases/releases/latest)** · 30-day free trial · updates itself
+
+[iruka.sh](https://iruka.sh) · [📖 Documentation](https://iruka.sh/docs) · [📝 Blog](https://iruka.sh/blog) · [🐛 Bug Reports](https://github.com/dorienh/iruka-releases/issues) · [💡 Feature Requests](https://github.com/dorienh/iruka-releases/issues)
+
+<br/>
+
+<img src="https://iruka.sh/screenshots/git-review.png" alt="Iruka: file list, a git review of five changed files with the diff of one, and a terminal that follows the folder" width="900"/>
 
 </div>
+
+---
+
+## Screenshots
+
+<table>
+<tr>
+<td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/claude-dark.png"><img src="https://iruka.sh/screenshots/claude-light.png" alt="File browser, synced terminal and Markdown preview"></picture><br/><sub>File browser, a terminal that follows it, and Markdown preview</sub></td>
+<td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/ssh-dark.png"><img src="https://iruka.sh/screenshots/ssh-light.png" alt="Saved SSH connections"></picture><br/><sub>Saved SSH connections: one click to a shell or a mounted folder</sub></td>
+</tr>
+<tr>
+<td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/search-dark.png"><img src="https://iruka.sh/screenshots/searc-light.png" alt="Advanced Search"></picture><br/><sub>Advanced Search: names, kinds, and file contents with grep regex</sub></td>
+<td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/pypreview-dark.png"><img src="https://iruka.sh/screenshots/pypreview-light.png" alt="Syntax-highlighted code preview"></picture><br/><sub>Syntax-highlighted code preview, 60+ languages</sub></td>
+</tr>
+</table>
+
+More on [iruka.sh](https://iruka.sh).
 
 ---
 
@@ -34,7 +59,7 @@ Iruka is a file manager for people whose repositories are being rewritten by cod
 [Full git documentation →](https://iruka.sh/docs/git)
 
 ### Compare and diff
-Select two files and press **⇧⌘C** for a side-by-side diff in a pane of its own — GitHub-style full-width bands with word-level highlighting on partially-changed lines. Select **one** file in a repository and you get what you've changed since your last commit. Select **two folders** and Iruka walks both trees and reports what's only on the left, only on the right, and changed in both, with `+35 −24` line counts per file, streaming in as it goes. In dual-pane mode, ⇧⌘C with nothing selected compares the two folders you're looking at. The comparison **only ever tells you** — nothing in it copies, moves or deletes. Hand any pair to **FileMerge** when you want to edit rather than read.
+Select two files and press **⇧⌘C** for a side-by-side diff in a pane of its own — GitHub-style full-width bands with word-level highlighting on partially-changed lines. Select **one** file in a repository and you get what you've changed since your last commit. Select **two folders** and Iruka walks both trees and reports what's only on the left, only on the right, and changed in both, with `+35 −24` line counts per file, streaming in as it goes. In dual-pane mode, ⇧⌘C with nothing selected compares the two folders you're looking at. The comparison **only ever tells you** — nothing in it copies, moves or deletes. Hand any pair to your merge tool (FileMerge, Kaleidoscope, Beyond Compare, VS Code and others) when you want to edit rather than read.
 
 ### SSH, SFTP, and SCP
 Save SSH connections in the sidebar (host, user, port, key path, notes).
@@ -55,7 +80,7 @@ Every tab has a persistent shell that follows your navigation. **Sync** keeps th
 
 ### Three view modes
 - **Icon grid** (⌘1) — adaptive grid of file icons
-- **List view** (⌘2) — sortable columns (Name, Modified, Size, Kind), resizable widths, rubber-band multi-select, and `›` triangles that expand folders inline
+- **List view** (⌘2) — sortable columns (Name, Date Modified, Date Created, Size, Kind, Permissions, Owner, colour Label), resizable widths, rubber-band multi-select, and `›` triangles that expand folders inline
 - **Column view** (⌘3) — Finder-style browser; a selected folder's contents stay open beside it, and the chain follows your selection
 
 ### Folder sizes
@@ -64,11 +89,14 @@ Nothing on disk records how much a folder holds, so Iruka walks it — one folde
 ### Rich preview pane
 - **CSV / TSV** — a proper grid with a bold header row, alternating shading and scrolling in both axes
 - **Markdown** — headings, code blocks, blockquotes, lists, and GFM pipe tables
+- **Audio and video** — a real player with a draggable timeline, volume, speed and full screen; audio shows a waveform
+- **HTML** — drawn as the page it describes, not as source
 - **Code** — syntax highlighting for 60+ languages; JSON auto pretty-printed
 - **PDFs, images and SVGs zoom** — ⌘−, ⌘=, ⌘0, with grab-and-drag panning and scroll bars that stay put
 - **An Info strip** under every preview — kind, exact byte size, created and modified dates, owner and group, permissions in both `rwxr-xr-x` and octal, image dimensions, an app's version and bundle identifier, and what a symlink points at. All selectable text
 - **Folders get a real preview** — what's inside at the top level, and the recursive size
-- **Editable** — any text-based file gets an **Edit** button; auto-saves after 1.5 s, supports ⌘S
+- **Find in the preview** — ⌘F, then ⌘G / ⌘⇧G to step through the matches
+- **Editable** — any text-based file gets an **Edit** button; auto-saves after 1.5 s, supports ⌘S. If another program changes the file while you edit, Iruka asks before overwriting it
 
 ### Drop Stack
 A shelf to park files on while you navigate. Add from anywhere — different folders, different tabs, different volumes — then copy or move the whole pile in one go, or only the part of it you want. [Drop Stack guide →](https://iruka.sh/docs/drop-stack)
@@ -88,6 +116,9 @@ An **Open in Iruka** entry in Finder's right-click menu and an optional toolbar 
 ### Power search
 Quick filter (⌘F) in the current folder, and **Advanced Search** (⌘⇧F) in a movable, resizable window you can leave running beside the file list. Filter by name, extension and kind, or search *contents* with grep-powered regex. [Search documentation →](https://iruka.sh/docs/search)
 
+### Copy and move you can watch
+Long copies, moves and archive extractions show up in a progress card: one line while it's collapsed, a row per operation with its own bar, byte counts, current file and **Cancel** when you open it. Large single files report real progress, and a slow network volume never freezes the window.
+
 ### File tools
 - **Copy Full Path / Copy Relative Path** — the relative one measured from the git repository root, which is the form you paste into an agent or an issue
 - **Open in External Terminal** — Terminal, iTerm, Ghostty, WezTerm, kitty, Alacritty, Warp and others
@@ -99,7 +130,7 @@ Quick filter (⌘F) in the current folder, and **Advanced Search** (⌘⇧F) in 
 A toolbar button cycles **System → Light → Dark**, and the terminal theme follows — pick a separate default for light and dark in Settings → Terminal.
 
 ### Keyboard first
-Every action has a shortcut. Navigate with arrow keys, open with ↩, rename with F2 or a slow second click, Quick Look with Space, permanent delete with ⌘⌫.
+Every action has a shortcut. Navigate with arrow keys, open with ↩, rename with F2 or a slow second click, Quick Look with Space, move to Trash with ⌘⌫. Press **⌘⇧/** for a searchable list of every shortcut.
 
 ### Sidebar
 Favourites, recent folders, places, iCloud Drive, SSH connections, cloud connections and mounted volumes. Every section collapses, with state persisted across launches. Recent tracks your last visited directories; drag any folder in to make it a favourite; eject any volume with one click.
@@ -108,50 +139,50 @@ Favourites, recent folders, places, iCloud Drive, SSH connections, cloud connect
 
 ## Keyboard Shortcuts
 
-A selection — the [full reference](https://iruka.sh/docs/keyboard-shortcuts) covers drag-and-drop
-modifiers, the Drop Stack, column view and the rest.
+A selection — **⌘⇧/** in the app, or the [full reference](https://iruka.sh/docs/keyboard-shortcuts), covers
+drag-and-drop modifiers, the Drop Stack, column view and the rest.
 
 | Action | Key |
 |--------|-----|
 | Back / Forward | `⌘[` / `⌘]` — or the **mouse side buttons** |
 | Enclosing folder | `⌘↑` |
+| Home / Desktop / Documents / Downloads | `⌘⇧H` / `⌘⇧D` / `⌘⇧O` / `⌘⌥L` |
+| Go to Folder… | `⌘L` |
 | Open / navigate into | `↩` |
 | Open in default app | `⌘↓` |
 | Quick Look | `Space` |
 | Rename | `F2` or slow second click |
-| Trash selected | `⌫` |
-| Permanent delete | `⌘⌫` |
+| Move to Trash | `⌘⌫` (or `F8`; plain `⌫` is configurable in Settings) |
+| Delete immediately | `⌘⌥⌫` |
 | Undo | `⌘Z` |
-| New File | `⌘⌥N` |
-| New Folder | `⌘⇧N` |
+| Duplicate | `⌘D` |
+| New File / New Folder | `⌘⌥N` / `⌘⇧N` |
 | New Window | `⌘N` |
-| New Tab | `⌘T` |
-| Close Tab | `⌘W` |
-| Icon view | `⌘1` |
-| List view | `⌘2` |
-| Column view | `⌘3` |
+| New Tab / Close Tab | `⌘T` / `⌘W` |
+| Reopen closed tab | `⌘⇧T` |
+| Next / previous tab | `⌘}` / `⌘{` or `⌃⇥` / `⌃⇧⇥` |
+| Icon / List / Column view | `⌘1` / `⌘2` / `⌘3` |
 | Toggle dual pane | `⌘\` |
-| Switch pane | `Tab` |
-| Copy to other pane | `F5` or `⌘⌥C` |
+| Switch pane | `⇥` |
+| Copy / move to other pane | `F5` / `F6` — or `⌘⌥C` / `⌘⌥M` |
 | **Compare / close the diff pane** | `⌘⇧C` |
 | **Review every change in the repository** | `⌘⇧U` |
 | **Next / previous file in the review** | `⌥↓` / `⌥↑` |
 | Zoom the preview or the diff | `⌘−` / `⌘=` / `⌘0` |
-| Go Home | `⌘⇧H` |
-| Go to Folder… | `⌘L` |
 | Toggle hidden files | `⌘⇧.` |
 | Toggle terminal | `F4` |
 | Focus terminal ↔ file browser | `⌘⌥T` |
 | Toggle preview pane | `⌘⌥P` |
-| Light / dark mode | `⌘⌥A` |
-| Find… | `⌘F` |
+| Light / dark / system | `⌘⌥A` |
+| Find… (filter, or search inside the preview) | `⌘F`, then `⌘G` for the next match |
 | Advanced Search… | `⌘⇧F` |
-| Reveal in Finder | `⌘⇧R` |
+| Show in Finder | `⌘⇧R` |
 | Get Info | `⌘I` |
 | Refresh | `⌘R` |
 | Select all | `⌘A` |
 | Connect to Server… | `⌘K` |
 | Add SSH Connection… | `⌘⌥K` |
+| **All keyboard shortcuts** | `⌘⇧/` |
 
 ---
 
@@ -160,6 +191,18 @@ modifiers, the Drop Stack, column view and the rest.
 Every release is written up for users — what changed and why it's worth updating — on the
 [Releases page](https://github.com/dorienh/iruka-releases/releases). The same notes appear in the
 app's own update window when Sparkle offers you a new version.
+
+---
+
+## From the blog
+
+- [Every App Switch Is a Doorway. With ADHD, I Forget Why I Walked Through.](https://iruka.sh/blog/adhd-doorway-effect-every-app-is-a-doorway)
+- [Browse Your Server's Files. Your SSH Terminal Follows.](https://iruka.sh/blog/browse-server-files-synced-ssh-terminal)
+- [I Built a File Manager Where You Can Actually Watch Your AI Agent Work](https://iruka.sh/blog/watch-ai-agent-work)
+- [macOS Never Got the File Manager Developers Deserved. So I Built It.](https://iruka.sh/blog/macos-file-manager-developers-deserved)
+- [The Top 5 Finder Replacements for Mac in 2026 (And Why I Ended Up Building a Sixth)](https://iruka.sh/blog/top-5-finder-replacements-for-mac-2026)
+
+[All posts →](https://iruka.sh/blog)
 
 ---
 
@@ -174,8 +217,8 @@ app's own update window when Sparkle offers you a new version.
 | | |
 |---|---|
 | **macOS** | Sonoma 14.0 or later |
-| **Architecture** | Apple Silicon and Intel |
-| **Download** | ~12 MB (DMG) |
+| **Architecture** | Universal (Apple Silicon and Intel) |
+| **Download** | ~10 MB (DMG) |
 
 ---
 
