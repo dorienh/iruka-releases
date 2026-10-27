@@ -8,6 +8,41 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.2.0.3</title>
+      <pubDate>Tue, 27 Oct 2026 15:08:36 +0000</pubDate>
+      <sparkle:version>99</sparkle:version>
+      <sparkle:shortVersionString>1.2.0.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h3>The One Where You Look Inside The Zip Without Unzipping It</h3>
+<h4>Added</h4>
+<ul>
+<li><strong>See the contents of an archive without extracting it.</strong> Select a zip, tar (gzip, bzip2 or xz), 7z or rar file. The preview pane shows its contents as a tree. Each file shows its size and date. The pane also shows the total unpacked size. To open one file, double-click it in the list. Iruka extracts only that file to a temporary folder and opens it. To extract the full archive, double-click the archive, as before. A zip file lists immediately at all sizes. Iruka must read all of a <code>.tar.gz</code> file to list it, so a large file shows a spinner. When you select a different file, the read stops. On a cloud or server mount, a compressed tar file larger than 50 MB does not list automatically. Click <strong>List Contents</strong> to list it. This step prevents an accidental download of the full file.</li>
+<li><strong>The review pane follows you to a different repository.</strong> When the review pane is open and you go to a folder in a different git repository, the review pane changes to that repository. This also occurs when you change to a tab or pane in a different repository. Before, the review pane stayed on the first repository until you pressed ⇧⌘U. In the same repository, the review pane does not change. Folders that are not in a repository do not change it. To keep the old behavior, turn off <strong>Review follows the folder you browse</strong> in Settings.</li>
+<li><strong>Make an alias with ⌘⌥-drag, as in Finder.</strong> Hold ⌘ and ⌥ when you drop files or folders. Iruka makes Finder aliases at the drop target and does not copy the items. Each alias has the name "<em>name</em> alias" and the curved arrow. An alias continues to point to the original after you move or rename the original. This works in the list, icon and column views. It works for items from Iruka and from other apps. To remove the aliases, press ⌘Z.</li>
+<li><strong>Change the terminal height with one click.</strong> The terminal header has two small arrows. One arrow doubles the height. The other arrow halves the height. The file list always keeps some space. Iruka keeps the new height, as it does for a height that you set with a drag.</li>
+<li><strong>Delete items from a volume that has no Trash.</strong> Mounted servers and most network volumes have no Trash. Before, Move to Trash on these volumes showed an error. Now Iruka asks if you want to delete the items permanently. Click <strong>Delete Permanently</strong> to delete them. Return does not select this button. If the selection has items on other volumes, Iruka moves those items to the Trash as usual.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>⌘F searches the file list when you use the file list.</strong> Before, ⌘F sometimes opened the find bar of the review pane, the diff pane or a text preview. This occurred after you clicked a file in the list. Now ⌘F and ⌘G go to a pane only if your last click was in that pane. In all other conditions, ⌘F opens the file filter.</li>
+<li><strong>Files that you paste from Remote Desktop are correct.</strong> Before, a PDF copied in Microsoft's Windows App and pasted into Iruka did not open. The file size was correct, but the contents were not. Some apps write the file contents only when the receiving app tells them that it will read the file. Finder sends this message. Iruka did not send it. Now Iruka sends this message before each copy, paste and drop. Also, Iruka now downloads an iCloud Drive file that is only in the cloud before it copies it. Before, Iruka copied an empty placeholder. (<a href="https://github.com/dorienh/iruka-releases/issues/86">#86</a>)</li>
+<li><strong>SFTP mounts work when <code>~/.ssh/known_hosts</code> has a line that rclone cannot read.</strong> Before, Iruka gave rclone your full known_hosts file. If one line was bad, rclone stopped and all SFTP mounts failed. Iruka then showed an incorrect message about a changed server key. Now Iruka gives rclone only the saved keys for the server that you connect to. If Iruka cannot read those keys, the message tells you that the problem is in the file. (<a href="https://github.com/dorienh/iruka-releases/issues/97">#97</a>)</li>
+<li><strong>Pull, Push and Fetch do not type into a program that runs in the terminal.</strong> These commands run in the terminal pane, so you can see the output and type a password. Before, the check for a busy terminal was sometimes one second old. In an SSH session that Iruka opened, the check did not occur. Thus, with vim open, Pull typed its command into the document. Now Iruka checks the terminal when you click. If a program uses the terminal, Iruka tells you. You can then run the command in a new tab or cancel it. Before, Iruka opened a new tab and did not tell you. The same check applies to SCP send and receive, Connect via SSH and <strong>Terminal here</strong>. When you turn on <strong>Sync</strong> while a program runs, Iruka waits until the program stops. Then it changes the folder.</li>
+<li><strong>Open With does not stay on "Loading…".</strong> Before, Iruka found the list of applications after the submenu opened. An open menu does not update, so the submenu sometimes showed "Loading…" until you opened it again. Now the list is ready before the submenu opens. Iruka finds the list from the file type and does not read the file. Iruka keeps each list for one minute.</li>
+<li><strong>Plain text files show without code colors.</strong> Before, Iruka colored <code>.txt</code> files with the rules for C code. Apostrophes, web addresses and numbers got incorrect colors. Now text, log, subtitle, reStructuredText, AsciiDoc, Org and certificate files show without colors.</li>
+<li><strong>A cloud, SFTP or FTP mount that stops does not freeze Iruka.</strong> A background rclone process keeps each of these volumes mounted. Sometimes this process stopped, usually when the Mac was asleep. macOS continued to show the volume as mounted. All operations on the volume then waited without end, and Iruka did not respond. Now Iruka finds a mount without its rclone process at launch, on wake, and when the process stops. Iruka then removes the volume. A copy in progress stops with an error. The sidebar shows the connection as disconnected, and you can mount it again immediately. The sidebar also does not show <strong>Mounted</strong> for a volume that is not available.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.2.0.3/Iruka-1.2.0.3.dmg"
+        sparkle:edSignature="x02GvzIPsIt8JZnWu9FRFIfGVBMhYK+/hTg6tjJCglf5hehRMVteOTuph8kwfj31ADNBO74zg0+TBd2pxHjcBw=="
+        length="11096461"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.2.0.2</title>
       <pubDate>Thu, 08 Oct 2026 16:43:46 +0000</pubDate>
       <sparkle:version>98</sparkle:version>
