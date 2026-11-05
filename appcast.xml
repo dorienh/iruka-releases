@@ -8,6 +8,58 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.2.1.0</title>
+      <pubDate>Thu, 05 Nov 2026 14:55:16 +0000</pubDate>
+      <sparkle:version>100</sparkle:version>
+      <sparkle:shortVersionString>1.2.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h3>The One Where You Merge The Folders Instead Of Replacing Them</h3>
+<h4>Added</h4>
+<ul>
+<li><strong>Iruka shows both items when a name is already in use.</strong> When you copy or move an item to a folder that has an item with the same name, a window shows the two items. It shows a preview image, the size and the date of each item. It marks the newer item and the larger item. Click <strong>Compare…</strong> to see the differences in the diff pane. To keep both items, you can type the name for the new item.</li>
+<li><strong>See all conflicts in one window.</strong> When two or more items have names that are already in use, one window shows all of them. Select one action for the files and one action for the folders. To select an action for each item, click <strong>Show the items</strong>. The button tells you how many items Iruka copies or moves.</li>
+<li><strong>Merge folders.</strong> When a folder with the same name is already in the destination, click <strong>Merge</strong>. Iruka adds the items that you copy or move to that folder. Items that are only in that folder stay. For files that are in both folders, Iruka uses your choice for files or asks you. Merge is the default button for folders. One undo reverses the full merge.</li>
+<li><strong>Iruka does not copy identical files.</strong> When a file in the destination has the same contents, Iruka skips the file and does not ask. You can turn this off in Settings → Files.</li>
+<li><strong>Set what Iruka does when a name is already in use.</strong> In Settings → Files, select an action for files and an action for folders. You can also select how Iruka names a kept copy. With an action other than Ask, Iruka does not ask, and the progress panel tells you what it did. To see the question one time, hold ⇧ when you drop, or paste with ⇧⌘V (<strong>Edit → Paste and Ask</strong>).</li>
+<li><strong>scp uses the saved password.</strong> When you send or receive with scp, Iruka enters the password or key passphrase that you saved for the connection. Before, the terminal asked you for it.</li>
+<li><strong>Iruka tells you when scp will replace items.</strong> scp replaces items that have the same name and does not ask. Before you send, Iruka looks in the destination folder on the server. If items with the same names are there, a message shows their names, and the button shows <strong>Send and Replace</strong>. Return starts the transfer only after the check finds no items with the same names. When you receive files, Iruka does the same check in the current folder. For a key with a passphrase, Iruka uses the passphrase that you saved for the connection. Iruka cannot check a pattern such as <code>*.log</code>, or a server that needs a password. Then a message tells you that scp can replace items, and you must click the button.</li>
+<li><strong>Open and close folders with the arrow keys in the list view.</strong> Press → to open the selected folder. Press ← to close it. When the selected row is in an open folder, ← selects that folder. ⌘→ and ⌘← do the same as → and ←, as in Finder. Hold ⌥ to open or close the selected folder and all the folders in it. ⌥→ opens a maximum of 500 folders. These keys are also in the Keyboard Shortcuts window.</li>
+<li><strong>Iruka shows the sync status of items in cloud folders.</strong> A small symbol shows on the corner of the icon in the list view, the column view and the icon view. A green check shows that the item is synced. A cloud shows that the item is online only. A cloud with a down arrow shows that the provider has a newer version of the item. An arrow shows that the item is uploading or downloading. A triangle shows a sync error. When an item in a folder is uploading, is downloading or has an error, the folder shows that symbol too. When all the items in a folder are online only, the folder shows the cloud. This applies to items that Iruka has shown in the list. Hold the pointer on the symbol to read the status. This works for iCloud Drive, and for OneDrive, Google Drive, Box and Dropbox in <code>~/Library/CloudStorage</code>. Iruka cannot show the status of a Dropbox folder at a different location, such as <code>~/Dropbox</code>. To hide the symbols, click <strong>View → Show Cloud Sync Status</strong>.</li>
+<li><strong>Download online-only items, or remove the local copy.</strong> Right-click an item in a cloud folder, then click <strong>Download Now</strong> or <strong>Remove Download</strong>. <strong>Download Now</strong> on a folder downloads all the items in the folder. If a download cannot start, a message tells you. <strong>Remove Download</strong> on a folder removes the local copies of all the items in the folder. Iruka cannot remove the local copy of an item with changes that are not uploaded. A message then shows the names of these items.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>Each tab keeps its own expanded folders.</strong> Before, a folder that you expanded in one tab also showed as expanded in other tabs of the pane.</li>
+<li><strong>Compare shows the two items while you decide.</strong> When you click <strong>Compare…</strong> in the name conflict window, the window moves to the corner. You can then use the comparison and choose an action. For folders, the first difference is selected.</li>
+<li><strong>Paste and new items use the selected folder in an expanded list.</strong> Select a file in an expanded folder, then paste or create a new file or folder. The item goes to that folder. Before, the item went to the top folder.</li>
+<li><strong>The list and the status bar show the new size and date of a changed file.</strong> Before, a file replaced under the same name could keep its old size and date. The status bar could also show an old folder total.</li>
+<li><strong>Iruka does not select a row when a file changes.</strong> Before, with no selection, a changed or new file could cause Iruka to select the first row.</li>
+<li><strong>The Permissions window shows the items you selected.</strong> Before, the window could open with 0 items, and you could not change the permissions.</li>
+<li><strong>Keyboard commands apply to the path when you edit the path.</strong> ⌘A selects the text in the path bar. ⌘C, ⌘X and ⌘V also apply to that text. Before, ⌘A selected all the files.</li>
+<li><strong>The path bar suggests hidden folders when you type their names.</strong> Type <code>~/Libr</code> to see <code>Library</code>. Before, the list did not show hidden folders. With no name typed, the list still does not show them.</li>
+<li><strong>Click in the file list to stop editing the path.</strong> Iruka closes the path field and does not use the text that you typed. Before, the field stayed open and received your typing.</li>
+<li><strong>Return does not replace an item.</strong> Before, Return selected <strong>Replace</strong> in the conflict window. Now Return selects <strong>Keep Both</strong> for files and <strong>Merge</strong> for folders.</li>
+<li><strong>A failed copy does not remove the original item.</strong> Before, <strong>Replace</strong> moved the original item to the Trash before the copy started. If the copy failed, the folder had neither item. Now Iruka moves the original item to the Trash only after the new copy is complete.</li>
+<li><strong>Iruka asks before it deletes an item permanently during Replace.</strong> Mounted servers and most network volumes have no Trash. Before, <strong>Replace</strong> on these volumes deleted the original item permanently and did not tell you. Now the button shows <strong>Replace Permanently</strong>, and Return does not select it. The <strong>Undo</strong> menu item tells you which items it cannot restore.</li>
+<li><strong>Iruka finds updates after the Mac wakes.</strong> Before, an update check sometimes started before the Mac connected to the network. The check failed, and Iruka did not try again for one day. Now Iruka waits for the network and then does the check again.</li>
+<li><strong>The file icon stays under the pointer when you drag.</strong> Before, the icon showed far above the pointer when the terminal or the status bar was below the file list. This also applies to drags from the drop stack.</li>
+<li><strong>Click a selected item again to rename it, as in Finder.</strong> Before, the second click had to come between 0.8 and 1.5 seconds after the first. Now any second click after the double-click time starts the rename. The double-click time comes from your system settings. A click that moves the focus back to the file list from the terminal or the other pane does not start a rename.</li>
+<li><strong>Iruka tells you when a name is already in use.</strong> When you rename an item to the name of a different item in the same folder, the name field stays open. A red message shows the problem. Before, Iruka showed an error about a failed move. In the icon view and the column view, the <strong>Rename</strong> button stays off until the name is correct. The base name is selected, so you can type a new name and keep the extension.</li>
+<li><strong>Batch Rename checks all names before it renames a file.</strong> Before, a name that was already in use stopped the rename in the middle. The files before it had new names and the files after it did not. Now the preview shows each problem in red, and the <strong>Rename</strong> button stays off until you correct them. You can also exchange names, for example "a" to "b" and "b" to "a". One undo restores all the names.</li>
+<li><strong>A copy in the same folder uses your name setting.</strong> When you paste an item into its own folder or click <strong>Duplicate</strong>, the copy uses the name setting in Settings → Files. By default, the copy is "report 2.txt".</li>
+<li><strong>Iruka keeps a saved password when it cannot read the Keychain.</strong> Before, the edit window for a server or SSH connection then showed an empty password field. If you clicked <strong>Save</strong>, Iruka deleted the saved password. Now an empty field in this case does not change the saved password.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.2.1.0/Iruka-1.2.1.0.dmg"
+        sparkle:edSignature="ofDSTzUB1QY+xxCKaDwdOvOFJaM3SON8UDCKVCNn5lxT4nqYt4lK0aJpfgH3XpSpkoDwqputOzz5lAmoPM05AQ=="
+        length="11624977"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.2.0.3</title>
       <pubDate>Tue, 27 Oct 2026 15:08:36 +0000</pubDate>
       <sparkle:version>99</sparkle:version>
