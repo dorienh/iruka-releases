@@ -73,8 +73,8 @@ Deactivating your license in **Settings → License** removes the license key, t
 
 ## Your rights
 
-To ask what we hold about you, or to have it corrected or deleted, email [dorien.herremans@gmail.com](mailto:dorien.herremans@gmail.com). Some order records may need to be kept for tax or legal reasons. For data held by Lemon Squeezy, you can also contact Lemon Squeezy directly.
+To ask what we hold about you, or to have it corrected or deleted, open a thread in [GitHub Discussions](https://github.com/dorienh/iruka-releases/discussions). Discussions are public, so please don't post your license key or personal details there. We'll arrange a private way to continue. Some order records may need to be kept for tax or legal reasons. For data held by Lemon Squeezy, you can also contact Lemon Squeezy directly.
 
 ## Contact
 
-Questions about this policy? Email [dorien.herremans@gmail.com](mailto:dorien.herremans@gmail.com).
+Questions about this policy? Open a thread in [GitHub Discussions](https://github.com/dorienh/iruka-releases/discussions).
