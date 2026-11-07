@@ -1,62 +1,80 @@
 # Iruka — Privacy Policy
 
-**Last updated: 17 July 2026**
+**Last updated: 7 November 2026**
 
-This policy explains what information Iruka collects and how it is used.
+This policy explains what the Iruka app and the `iruka.sh` website collect, why, and where it goes. Iruka is made by Dorien Herremans.
 
 ---
 
-## What Iruka collects
+## What the app never sends
 
-Iruka collects the minimum necessary to operate:
+- The names, paths or contents of your files and folders
+- Crash reports
+- Advertising IDs
+- Your server, SSH or cloud passwords and keys, which stay in the macOS Keychain on your Mac
 
-| Data | Purpose | Where stored |
-|---|---|---|
-| License key | Identify your purchase | On your Mac (UserDefaults) |
-| License instance ID | Verify this Mac is authorised | On your Mac (Keychain) |
-| Update period expiry date | Determine update eligibility | On your Mac (UserDefaults) |
-| License tier and machine limit | Display your plan in Settings | On your Mac (UserDefaults) |
+## What the app sends
 
-License data is sent only to the LemonSqueezy license API at `api.lemonsqueezy.com` to activate or validate your license. Update check data (see Sparkle section below) is stored anonymously on servers controlled by Dorien Herremans. No personal information is ever stored.
+The app makes three kinds of connection on its own:
 
-## What Iruka does not collect
+| Connection | What is sent | Goes to | Why |
+|---|---|---|---|
+| Update check, once a day | Install ID, app version and build, license status. Sparkle, the update framework, may also send macOS version, CPU type, Mac model, system language and RAM amount. | `iruka.sh` | Offer updates, count installs, decide which systems to support |
+| Daily ping | Install ID, app version and build, license status, license tier, and a salted hash of your license key if you have one | `iruka.sh` | Count active installs, detect cracked or refunded licenses |
+| License activation and validation | Your license key, and when activating, your Mac's name as set in System Settings | Lemon Squeezy (`api.lemonsqueezy.com`) | Activate your license and confirm it is valid |
 
-- No crash reporting sent anywhere
-- No file names, paths, or contents you browse
-- No personal identifiers — the install ID in update checks is a random number, not linked to you, your license, or your hardware
-- No advertising IDs or cross-app tracking
+You can turn off automatic update checks in Settings. The daily ping can't currently be turned off.
+
+Other connections happen only when you set them up, such as SSH sessions, server and cloud mounts, and git remotes. These go to the servers you choose, not to us.
+
+## The install ID
+
+Each install creates a random ID, stored on your Mac. It isn't derived from your hardware or from personal data.
+
+During a trial, nothing connects this ID to you. Once a license key is entered, the daily ping sends a salted hash of that key together with the install ID. We can match the hash against our purchase records, so **for a licensed install, the install ID and its usage records can be linked to your purchase, including your name and email**. We use this to check that installs reporting a license match a real purchase.
+
+## What we store
+
+These records are kept on servers controlled by Dorien Herremans, using Supabase (database) and Vercel (hosting):
+
+- **Install records:** the update check and daily ping data listed above, with the dates they were received. We don't save your IP address in these records, though Vercel may process it to deliver the request.
+- **License and order records:** a copy of what Lemon Squeezy holds about your license and order, updated hourly. This includes your name, email, license key, order amounts, tax, discounts and refund status, and the name of each Mac you activated.
+
+We use license and order records for customer support, to detect misuse, and to re-issue licenses if the Lemon Squeezy account ever became unavailable. There is currently no fixed date when these records are deleted automatically.
 
 ## Payments
 
-Purchases are handled by **LemonSqueezy** (Lemon Squeezy, LLC). When you buy a license your payment details (name, email, card) are collected by LemonSqueezy, not by Iruka or Dorien Herremans. LemonSqueezy's privacy policy applies to that data: [lemonsqueezy.com/privacy](https://www.lemonsqueezy.com/privacy)
+Purchases are handled by **Lemon Squeezy** (Lemon Squeezy, LLC), which processes your payment. We don't receive your full card number. Lemon Squeezy's privacy policy also applies: [lemonsqueezy.com/privacy](https://www.lemonsqueezy.com/privacy)
 
-## Local storage
+## The iruka.sh website
 
-Iruka stores license information locally on your Mac using standard macOS mechanisms:
+The website uses these analytics and advertising tools:
 
-- **UserDefaults** — license key, tier, expiry date, anonymous install ID (not sensitive)
-- **Keychain** — license instance ID (protected by macOS Keychain access controls)
+- **Google Analytics** and **Vercel Analytics** measure visits and how the site is used.
+- **Google Ads** records when someone reaches the download page, to measure our ads.
+- **OpenAI Ads** records page views and downloads, to measure our ads.
+- **X Ads** records site visits. If you continue to our thank-you page after buying, it also receives your order ID and, when the total is in US dollars, the amount.
 
-Deactivating your license in Settings → License removes all stored license data from both locations.
+These services may set cookies or similar identifiers in your browser and handle the data under their own policies. You can block them with your browser's settings or a content blocker, and the site will still work.
 
-## Sparkle (software updates)
+Embedded videos use YouTube's privacy-enhanced mode (`youtube-nocookie.com`).
 
-Iruka uses [Sparkle](https://sparkle-project.org) to check for updates. When checking, Sparkle may send anonymous technical details to `iruka.dorienherremans.com`:
+## Affiliate referrals
 
-- App version and build number
-- macOS version
-- CPU architecture (Apple Silicon or Intel)
-- Mac model identifier (e.g. MacBookPro18,1)
-- System language
-- RAM amount
-- A random anonymous install ID (generated once on first launch, stored on your Mac)
+The website runs Lemon Squeezy's affiliate tracking script. If you arrive through an affiliate link (a URL containing `?aff=`), Lemon Squeezy stores that affiliate's referral code in a cookie in your browser for 60 days and adds it to the checkout links on the site. If you then buy a license, the affiliate who referred you earns a commission. You pay the same price either way. The cookie holds only the affiliate's code, not information about you. You can clear it at any time by deleting cookies for `iruka.sh` in your browser.
 
-Each install generates a random ID stored only on your Mac and sent with update checks so we can count unique installs. It is not derived from your hardware, license, or any personal data. This data is stored anonymously to understand how many installs are active and which platforms to support.
+## Stored on your Mac
+
+- **UserDefaults:** license key, tier, expiry date, install ID and your settings
+- **Application Support** (`~/Library/Application Support/Iruka/`): license instance ID, update period details and trial dates
+- **Keychain:** passwords and keys for your saved connections
+
+Deactivating your license in **Settings → License** removes the license key, tier, expiry date and instance ID from your Mac. It keeps your renewal history, install ID and trial dates, and it doesn't delete anything from our servers.
 
 ## Your rights
 
-You can view or delete all locally stored data at any time by deactivating your license in **Settings → License**. For questions or requests related to any personal data LemonSqueezy may hold on your behalf, contact LemonSqueezy directly.
+To ask what we hold about you, or to have it corrected or deleted, email [dorien.herremans@gmail.com](mailto:dorien.herremans@gmail.com). Some order records may need to be kept for tax or legal reasons. For data held by Lemon Squeezy, you can also contact Lemon Squeezy directly.
 
 ## Contact
 
-Questions about this policy: [dorien.herremans@gmail.com](mailto:dorien.herremans@gmail.com)
+Questions about this policy? Email [dorien.herremans@gmail.com](mailto:dorien.herremans@gmail.com).
