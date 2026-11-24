@@ -70,7 +70,10 @@ Open two folders side by side and drag files between them. Each pane has its own
 A shelf to park files on while you navigate. Add from anywhere — different folders, different tabs, different volumes — then copy or move the whole pile in one go, or only the part of it you want. [Drop Stack guide →](https://iruka.sh/docs/drop-stack)
 
 ### Batch rename
-Find & replace, prefix & suffix, and numbering, applied in that order, with a live preview of every resulting name before you commit and undo after. Extensions are never touched. [Batch rename guide →](https://iruka.sh/docs/batch-rename)
+Find & replace, prefix & suffix, and numbering, applied in that order, with tokens such as `{taken}` for the date of a photo, with a live preview of every resulting name before you commit and undo after. Extensions are never touched. [Batch rename guide →](https://iruka.sh/docs/batch-rename)
+
+### Disk Map
+See what takes up space in a folder as rings you can click into, with a list of the biggest items beside it. Sizes show while it reads the folder, and you can move what you don't need to the Trash right there. [Disk Map guide →](https://iruka.sh/docs/disk-map)
 
 ### Folder sizes
 Nothing on disk records how much a folder holds, so Iruka walks it — one folder at a time, in the background, below everything else, dropped the moment the answer stops being wanted. Sizes appear in the **Size** column, the status bar and the preview pane from a single measurement. Select things and the status bar totals them, folders included. Applications are measured too. Turn it off in Settings → General.
@@ -79,7 +82,7 @@ Nothing on disk records how much a folder holds, so Iruka walks it — one folde
 Long copies, moves and archive extractions show up in a progress card: one line while it's collapsed, a row per operation with its own bar, byte counts, current file and **Cancel** when you open it. Large single files report real progress, and a slow network volume never freezes the window.
 
 ### Finder integration
-An **Open in Iruka** entry in Finder's right-click menu and an optional toolbar button, via a Finder extension you switch on in System Settings. [Setup →](https://iruka.sh/docs/finder-integration)
+An **Open in Iruka** entry in Finder's right-click menu and an optional toolbar button, via a Finder extension you switch on in System Settings. From a terminal, `iruka .` opens the current folder. [Setup →](https://iruka.sh/docs/finder-integration)
 
 ### Navigating
 - **Tabs** — independent history, selection and terminal session each. Drag files onto a tab to move or copy them there; hover a folder for 750 ms while dragging and it **spring-loads** open
@@ -120,17 +123,18 @@ If your repositories are being rewritten by coding agents, git in Iruka is a fir
 Select two files and press **⇧⌘C** for a side-by-side diff in a pane of its own — GitHub-style full-width bands with word-level highlighting on partially-changed lines. Select **one** file in a repository and you get what you've changed since your last commit. Select **two folders** and Iruka walks both trees and reports what's only on the left, only on the right, and changed in both, with `+35 −24` line counts per file, streaming in as it goes. In dual-pane mode, ⇧⌘C with nothing selected compares the two folders you're looking at. The comparison **only ever tells you** — nothing in it copies, moves or deletes. Hand any pair to your merge tool (FileMerge, Kaleidoscope, Beyond Compare, VS Code and others) when you want to edit rather than read.
 
 ### Power search
-Quick filter (⌘F) in the current folder, and **Advanced Search** (⌘⇧F) in a movable, resizable window you can leave running beside the file list. Filter by name, extension and kind, or search *contents* with grep-powered regex. [Search documentation →](https://iruka.sh/docs/search)
+Quick filter (⌘F) in the current folder, and **Advanced Search** (⌘⇧F) in a movable, resizable window you can leave running beside the file list. Filter by name, extension, kind and Finder tag, or search *contents* with grep-powered regex. [Search documentation →](https://iruka.sh/docs/search)
 
 ### File tools
 - **Copy Full Path / Copy Relative Path** — the relative one measured from the git repository root, which is the form you paste into an agent or an issue
 - **Open in External Terminal** — Terminal, iTerm, Ghostty, WezTerm, kitty, Alacritty, Warp and others
 - **Checksum…** — SHA-256 and MD5 with copy buttons; pick exactly two files and it answers *identical* or *different* directly, by comparing contents rather than hashing both to the end
-- **Color labels** — Finder-compatible, seven colours, via standard macOS extended attributes
+- **Finder tags** — the same tags as Finder, several per file, with named labels, a sidebar section and a Power Search filter. [Tags guide →](https://iruka.sh/docs/tags)
+- **Verify copies** — optional byte-for-byte check after each copy
 - **Archives** — compress any selection to `.zip`; extract `.zip`, `.tar`, `.tar.gz`, `.tar.bz2`, `.tar.xz` and `.tgz` in place
 
 ### Appearance
-A toolbar button cycles **System → Light → Dark**, and the terminal theme follows — pick a separate default for light and dark in Settings → Terminal.
+A toolbar button cycles **System → Light → Dark**. Pick a color theme for light and one for dark: High Contrast, Solarized, Nord, Catppuccin, One or Gruvbox. The terminal colors follow, and you can change them in Settings → Terminal.
 
 ### Keyboard first
 Every action has a shortcut. Navigate with arrow keys, open with ↩, rename with F2 or a slow second click, Quick Look with Space, move to Trash with ⌘⌫. Press **⌘⇧/** for a searchable list of every shortcut.
