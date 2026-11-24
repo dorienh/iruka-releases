@@ -21,7 +21,7 @@ or **[download the DMG](https://github.com/dorienh/iruka-releases/releases/lates
 
 <br/>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/diff-review-dark.png"><img src="https://iruka.sh/screenshots/diff-review-light.png" alt="Iruka: sidebar, file list, and a git review of five changed files with the diff of one" width="900"/></picture>
+<img src="https://iruka.sh/screenshots/git-review.png" alt="Iruka: file list, a git review of five changed files with the diff of one, and a terminal that follows the folder" width="900"/>
 
 </div>
 
