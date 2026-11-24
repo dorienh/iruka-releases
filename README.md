@@ -21,7 +21,7 @@ or **[download the DMG](https://github.com/dorienh/iruka-releases/releases/lates
 
 <br/>
 
-<img src="https://iruka.sh/screenshots/git-review.png" alt="Iruka: file list, a git review of five changed files with the diff of one, and a terminal that follows the folder" width="900"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/diff-review-dark.png"><img src="https://iruka.sh/screenshots/diff-review-light.png" alt="Iruka: sidebar, file list, and a git review of five changed files with the diff of one" width="900"/></picture>
 
 </div>
 
@@ -35,7 +35,7 @@ or **[download the DMG](https://github.com/dorienh/iruka-releases/releases/lates
 <td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/ssh-dark.png"><img src="https://iruka.sh/screenshots/ssh-light.png" alt="Saved SSH connections"></picture><br/><sub>Saved SSH connections: one click to a shell or a mounted folder</sub></td>
 </tr>
 <tr>
-<td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/search-dark.png"><img src="https://iruka.sh/screenshots/searc-light.png" alt="Advanced Search"></picture><br/><sub>Advanced Search: names, kinds, and file contents with grep regex</sub></td>
+<td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/power-search-dark.png"><img src="https://iruka.sh/screenshots/power-search-light.png" alt="Advanced Search"></picture><br/><sub>Advanced Search: names, kinds, and file contents with grep regex</sub></td>
 <td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="https://iruka.sh/screenshots/pypreview-dark.png"><img src="https://iruka.sh/screenshots/pypreview-light.png" alt="Syntax-highlighted code preview"></picture><br/><sub>Syntax-highlighted code preview, 60+ languages</sub></td>
 </tr>
 </table>
