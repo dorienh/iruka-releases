@@ -8,6 +8,44 @@
     <description>Iruka release notes</description>
     <language>en</language>
     <item>
+      <title>Iruka 1.2.1.2</title>
+      <pubDate>Wed, 25 Nov 2026 16:43:21 +0000</pubDate>
+      <sparkle:version>102</sparkle:version>
+      <sparkle:shortVersionString>1.2.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h3>The One Where the Server Picks Up the Pace</h3>
+<h4>Faster remote connections</h4>
+<ul>
+<li><strong>Downloads from FTP, SFTP and cloud servers are much faster.</strong> Before, a large file from a server far away could copy at less than 100 KB per second. Iruka downloaded most of the data many times and discarded it. Iruka now keeps the data in a temporary cache while it reads the file. In our test with a simulated distant server, downloads ran at 17 to 185 KB per second before. Now they run at more than 4 MB per second. The cache can use as much disk space as the file. Iruka clears it about one minute after the copy. To use the new setting, eject the server and connect again.</li>
+<li><strong>Uploads of many files to cloud storage are faster.</strong> Iruka now uploads up to 16 files at the same time. Before, it uploaded 4.</li>
+<li><strong>Iruka stays responsive while a server is slow.</strong> Before, Iruka could stop for some seconds while you viewed a folder on an FTP, SFTP or cloud server. Iruka no longer waits for the server when it draws the window.</li>
+<li><strong>Iruka uploads all files before it ejects a server.</strong> Before, Iruka could eject an FTP, SFTP or cloud server before all files were uploaded, and these files did not reach the server. Iruka now waits and shows how many files are left. Click <strong>Cancel</strong> to keep the server mounted or to eject it immediately. This applies to servers that you connect with this version.</li>
+</ul>
+<h4>Added</h4>
+<ul>
+<li><strong>Compare two folders in your comparison app.</strong> Select two folders, or one folder in each pane. Right-click and choose the <strong>Compare</strong> command with the name of your app, for example <strong>Compare These Two Folders in Araxis Merge</strong>. To compare the folders that the two panes show, right-click an empty area. In a folder comparison in Iruka, click the folder button to open both folders in the app. To select the app, go to Settings → General → Comparing. For example, this works with Araxis Merge, Beyond Compare and FileMerge.</li>
+</ul>
+<h4>Changed</h4>
+<ul>
+<li><strong>You can switch tabs faster in the list view.</strong> Before, Iruka made all visible rows and the sidebar again for each switch. Iruka now uses the rows again and only changes their contents. In the sidebar, it only moves the highlight. In our test with a large window, the delay is about half as long.</li>
+</ul>
+<h4>Fixed</h4>
+<ul>
+<li><strong>The back and forward buttons work on more mice.</strong> Many mouse drivers send these buttons as a swipe. Before, Iruka did not use the swipe, and the buttons did nothing. Now they go back and forward, as in Finder. If you set your trackpad to swipe between pages with three fingers, that swipe also works.</li>
+<li><strong>No false error after a comparison opens in another app.</strong> Before, Araxis Merge opened the two files, and then Iruka showed "Couldn't open Araxis Merge". Iruka now shows an error only when the app cannot open the files. This also applies to the other comparison apps.</li>
+<li><strong>Content search accepts full regex on every Mac.</strong> Before, a pattern such as <code>cat|dog</code> found nothing on a Mac without ripgrep. Iruka now reads the pattern as a regex with <code>grep</code> too. If the pattern is not a valid regex, <code>grep</code> searches for the exact text.</li>
+</ul>
+<p>---</p>
+      ]]></description>
+      <enclosure
+        url="https://github.com/dorienh/iruka-releases/releases/download/v1.2.1.2/Iruka-1.2.1.2.dmg"
+        sparkle:edSignature="kzGAGtzHIYw8YC2CMKoTEhz+1qrrWYCLAmh1GksRR5r5w5rY98p+znSnFNcUA4HG/tFtXP4IPWq3JTVagNCkBQ=="
+        length="12370914"
+        type="application/octet-stream"/>
+    </item>
+
+    <item>
       <title>Iruka 1.2.1.1</title>
       <pubDate>Tue, 24 Nov 2026 14:51:07 +0000</pubDate>
       <sparkle:version>101</sparkle:version>
